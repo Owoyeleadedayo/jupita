@@ -66,8 +66,6 @@ const SignIn = () => {
         <Flex
           width={"100%"}
           height={"100%"}
-          //   justifyContent={"center"}
-          //   alignItems={"center"}
           flexDirection={"column"}
           p={{ lg: "100px", md: "100px", base: "20px" }}
         >
