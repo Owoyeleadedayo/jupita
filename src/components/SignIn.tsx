@@ -1,6 +1,7 @@
 import { Box, Button, Flex, Heading, Image, Input, Text } from "@chakra-ui/react";
 import Logo from '../assets/Images/jupita2.png';
-import DT from '../assets/Images/signin.png'
+import DT from '../assets/Images/signin.png';
+import Logo2 from '../assets/Images/jupita.png'
 
 const SignIn = () => {
   return (
@@ -65,14 +66,22 @@ const SignIn = () => {
         <Flex
           width={"100%"}
           height={"100%"}
-          justifyContent={"center"}
-          alignItems={"center"}
+          //   justifyContent={"center"}
+          //   alignItems={"center"}
           flexDirection={"column"}
           p={{ lg: "100px", md: "100px", base: "20px" }}
         >
+          <Image
+            src={Logo2}
+            width={"100px"}
+            height={"100px"}
+            my={"40px"}
+            display={{ lg: "none" }}
+          />
           <Box
             width={"100%"}
             maxWidth={{ lg: "650px", md: "650px", base: "800px" }}
+            mt={{ lg: "50px", md: 'none', base: 'none' }}
             mx={"auto"}
           >
             <Flex flexDirection={"column"} gap={"10px"}>
