@@ -1,13 +1,15 @@
-import { BrowserRouter,  Routes } from 'react-router-dom'
-import SignIn from './components/SignIn'
+import { BrowserRouter,  Route,  Routes } from 'react-router-dom'
+import DashboardPage from './pages/DashboardPage'
+// import SignIn from './components/SignIn'
 
 function App() {
 
   return (
    <>
       <BrowserRouter>
-          <SignIn />
+          {/* <SignIn /> */}
         <Routes>
+          <Route path='/dashboard' element={<DashboardPage />} />
         </Routes>
       </BrowserRouter>
    </>
