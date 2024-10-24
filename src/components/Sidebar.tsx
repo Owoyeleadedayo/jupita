@@ -22,12 +22,13 @@ import {
 } from "@chakra-ui/react";
 import { FiMenu, FiBell, FiChevronDown } from "react-icons/fi";
 import Logo from "../assets/Images/jupita.png";
-import Dashboard from "./Dashboard";
 import { ReactNode, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface LinkItemProps {
   name: string;
   icon: ReactNode;
+  path?: string;
 }
 
 interface NavItemProps extends FlexProps {
@@ -36,6 +37,7 @@ interface NavItemProps extends FlexProps {
   name: string;
   activePage: string;
   setActivePage: React.Dispatch<React.SetStateAction<string>>;
+  path?: string;
 }
 
 interface MobileProps extends FlexProps {
@@ -62,6 +64,7 @@ const LinkItems: Array<LinkItemProps> = [
         />
       </svg>
     ),
+    path: '/dashboard'
   },
   {
     name: "Transaction",
@@ -78,6 +81,7 @@ const LinkItems: Array<LinkItemProps> = [
         />
       </svg>
     ),
+    path: "/transaction"
   },
   {
     name: "Clients",
@@ -112,6 +116,7 @@ const LinkItems: Array<LinkItemProps> = [
         <path fill="none" d="M0 0h36v36H0z" />
       </svg>
     ),
+    path: '/clients'
   },
   {
     name: "Credit Search",
@@ -128,6 +133,7 @@ const LinkItems: Array<LinkItemProps> = [
         ></path>
       </svg>
     ),
+    path: '/credit-search'
   },
 
   {
@@ -148,8 +154,8 @@ const LinkItems: Array<LinkItemProps> = [
         ></path>
       </svg>
     ),
+    path: '/analyze'
   },
-
   {
     name: "Decision Module",
     icon: (
@@ -165,8 +171,8 @@ const LinkItems: Array<LinkItemProps> = [
         ></path>
       </svg>
     ),
+    path: '/decision-module'
   },
-
   {
     name: "Reporting",
     icon: (
@@ -182,6 +188,7 @@ const LinkItems: Array<LinkItemProps> = [
         ></path>
       </svg>
     ),
+    path: '/reporting'
   },
   {
     name: "Logs",
@@ -204,6 +211,7 @@ const LinkItems: Array<LinkItemProps> = [
         </g>
       </svg>
     ),
+    path: '/logs'
   },
   {
     name: "Settings",
@@ -220,6 +228,7 @@ const LinkItems: Array<LinkItemProps> = [
         />
       </svg>
     ),
+    path: '/settings'
   },
   {
     name: "Sign Out",
@@ -236,6 +245,7 @@ const LinkItems: Array<LinkItemProps> = [
         />
       </svg>
     ),
+    path: '/sign-out'
   },
 ];
 
@@ -253,7 +263,12 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       h="full"
       maxH={"100vh"}
       overflowY={"auto"}
-      display={{ base: "block", md: "block" }} // Show on all screens, but use drawer for mobile
+      sx={{
+        "&::-webkit-scrollbar": {
+          display: "none", 
+        },
+      }}
+      display={{ base: "block", md: "block", lg: 'none' }}
       {...rest}
     >
       <Flex alignItems="center" mx="4" justifyContent="space-between" my={6}>
@@ -261,7 +276,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
           <Image src={Logo} alt={"Logo"} width={"80px"} height={"30px"} />
         </Flex>
         <CloseButton
-          display={{ base: "flex", md: "flex", lg: 'none' }}
+          display={{ base: "flex", md: "flex", lg: "none" }}
           p={"2px"}
           onClick={onClose}
         />
@@ -273,6 +288,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
           icon={link.icon}
           activePage={activePage}
           setActivePage={setActivePage}
+          path={link?.path}
         >
           {link.name}
         </NavItem>
@@ -287,7 +303,9 @@ const NavItem = ({
   name,
   activePage,
   setActivePage,
+  path,
 }: NavItemProps) => {
+  const navigate = useNavigate();
   return (
     <Box
       as="a"
@@ -297,8 +315,11 @@ const NavItem = ({
     >
       <Flex
         align="center"
-        p="3"
-        borderRadius="lg"
+        px={'12px'}
+        py={'12px'}
+        my={"4px"}
+        mx={'4px'}
+        borderRadius={"10px"}
         role="group"
         cursor="pointer"
         bg={activePage === name ? "rgba(212, 106, 53, 1)" : "transparent"}
@@ -309,11 +330,11 @@ const NavItem = ({
         _hover={{
           bg: "rgba(212, 106, 53, 1)",
           color: "white",
-          border: "1px solid rgba(212, 106, 53, 1)",
         }}
         onClick={() => {
           setActivePage(name);
           console.log(name);
+          navigate(`${path}`);
         }}
       >
         {icon && (
@@ -346,7 +367,10 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       justifyContent="space-between"
       {...rest}
     >
-      <Flex flexDirection={{ base: "row-reverse", md: "row-reverse", lg: 'row' }} gap={"40px"}>
+      <Flex
+        flexDirection={{ base: "row-reverse", md: "row-reverse", lg: "row" }}
+        gap={"40px"}
+      >
         <Flex>
           <Text
             color={"black"}
@@ -354,12 +378,10 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
             fontSize={"24px"}
             lineHeight={"33.6px"}
             fontWeight={600}
-          >
-            Dashboard
-          </Text>
+          ></Text>
         </Flex>
         <IconButton
-          display={{ base: "flex", md: "flex" }} // Show on mobile and medium screens
+          display={{ base: "flex", md: "flex", lg: "none" }} // Show on mobile and medium screens
           onClick={onOpen}
           variant="outline"
           aria-label="open menu"
@@ -435,7 +457,7 @@ const Sidebar = () => {
     <Box height="100%" bg={"#f9f5f5"}>
       <SidebarContent
         onClose={onClose}
-        display={{ base: "none", md: "none", lg: 'block' }} // Show sidebar on medium screens and up
+        display={{ base: "none", md: "none", lg: 'block' }}
       />
       <Drawer
         isOpen={isOpen}
@@ -450,8 +472,7 @@ const Sidebar = () => {
         </DrawerContent>
       </Drawer>
       <MobileNav onOpen={onOpen} />
-      <Box ml={{ base: 0, md: 0, lg: 60 }} p="4">
-        <Dashboard />
+      <Box ml={{ base: 0, md: 0, lg: 60 }} pt={2}>
       </Box>
     </Box>
   );

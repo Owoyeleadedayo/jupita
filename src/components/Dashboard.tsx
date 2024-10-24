@@ -43,7 +43,7 @@ const Dashboard = () => {
           base: "flex-start",
         }}
         flexDirection={{ lg: "row", md: "row", base: "column" }}
-        mx={{ md: "5px", base: "0px" }}
+        mx={{ md: "5px", base: "0px"}}
         p={{ md: "20px", base: "15px" }}
         borderRadius={"8px"}
         bgColor={"white"}
