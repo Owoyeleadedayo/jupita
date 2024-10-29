@@ -116,7 +116,7 @@ const LinkItems: Array<LinkItemProps> = [
         <path fill="none" d="M0 0h36v36H0z" />
       </svg>
     ),
-    path: '/clients'
+    path: '/detail'
   },
   {
     name: "Credit Search",
@@ -258,7 +258,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       bg={"white"}
       borderRight="1px"
       borderRightColor={"#f1f2f3"}
-      w={{ base: "full", md: 60 }} // Full width on mobile, sidebar width on larger screens
+      w={{ base: "full", md: 60 }} 
       pos="fixed"
       h="full"
       maxH={"100vh"}
@@ -315,15 +315,15 @@ const NavItem = ({
     >
       <Flex
         align="center"
-        px={'12px'}
-        py={'12px'}
+        px={"12px"}
+        py={"12px"}
         my={"4px"}
-        mx={'4px'}
+        mx={"4px"}
         borderRadius={"10px"}
         role="group"
         cursor="pointer"
         bg={activePage === name ? "rgba(212, 106, 53, 1)" : "transparent"}
-        color={activePage === name ? "white" : "black"}
+        color={activePage === name ? "white" : "#737791"}
         fontFamily={"Poppins"}
         fontSize={"18px"}
         lineHeight={"27px"}
@@ -381,7 +381,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           ></Text>
         </Flex>
         <IconButton
-          display={{ base: "flex", md: "flex", lg: "none" }} // Show on mobile and medium screens
+          display={{ base: "flex", md: "flex", lg: "none" }}
           onClick={onOpen}
           variant="outline"
           aria-label="open menu"
