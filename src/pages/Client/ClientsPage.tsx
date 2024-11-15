@@ -1,19 +1,19 @@
 import { Box } from "@chakra-ui/react";
-import Transaction from "../components/Transaction";
+import Clients from "../../components/Client/Clients";
 
-const TransactionPage = () => {
+const ClientsPage = () => {
   return (
     <>
       <Box
         ml={{ lg: "240px", md: "0px", base: "0px" }}
-        bg={"#f9f5f5"}
+        bg={"#FFF4EE"}
         px={{ lg: "10px", md: "10px", base: "10px" }}
-        pb={'30px'}
+        pb={"30px"}
       >
-        <Transaction />
+        <Clients />
       </Box>
     </>
   );
-}
+};
 
-export default TransactionPage;
+export default ClientsPage;

@@ -22,13 +22,15 @@ import {
 } from "@chakra-ui/react";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import { PiExportBold } from "react-icons/pi";
-import StatsCard from "./StatsCard";
-import Chart from "./Chart";
-import BarChart from "./BarChart";
+import StatsCard from "../StatsCard";
+import Chart from "../Chart";
+import BarChart from "../BarChart";
+import { useNavigate } from "react-router-dom";
 
 
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Flex
@@ -51,14 +53,14 @@ const Dashboard = () => {
       >
         <Box pl={{ lg: 0, md: 0, base: 2 }} gap={{ md: "20px", base: "6px" }}>
           <Heading
-            fontFamily={"Poppins"}
+            fontFamily={"Nunito Sans"}
             fontSize={{ md: "20px", base: "17px" }}
           >
             Period
           </Heading>
           <Flex alignItems={"center"}>
             <Text
-              fontFamily={"Poppins"}
+              fontFamily={"Nunito Sans"}
               fontSize={{ md: "16px", base: "14px" }}
               fontWeight={400}
             >
@@ -89,7 +91,7 @@ const Dashboard = () => {
             textAlign={"center"}
             fontSize={{ md: "14px", base: "12px" }}
             lineHeight={"20px"}
-            fontFamily={"Poppins"}
+            fontFamily={"Nunito Sans"}
             fontWeight={500}
             color={"white"}
             _hover={{
@@ -97,6 +99,7 @@ const Dashboard = () => {
               border: "1px solid rgba(212, 106, 53, 1)",
               color: "rgba(212, 106, 53, 1)",
             }}
+            onClick={() => {navigate('/api-status')}}
           >
             View API Status
           </Button>
@@ -117,7 +120,7 @@ const Dashboard = () => {
             <Flex flexDirection={"column"}>
               <Heading
                 fontSize={{ md: "20px", base: "17px" }}
-                fontFamily={"Poppins"}
+                fontFamily={"Nunito Sans"}
                 fontWeight={600}
                 lineHeight={"25px"}
               >
@@ -125,7 +128,7 @@ const Dashboard = () => {
               </Heading>
               <Text
                 fontSize={{ md: "16px", base: "14px" }}
-                fontFamily={"Poppins"}
+                fontFamily={"Nunito Sans"}
                 fontWeight={400}
                 lineHeight={"30px"}
               >
@@ -139,7 +142,7 @@ const Dashboard = () => {
                 py={{ md: "5px", base: "2px" }}
                 variant={"none"}
                 color={"#0F3659"}
-                fontFamily={"Poppins"}
+                fontFamily={"Nunito Sans"}
                 fontSize={{ md: "16px", base: "14px" }}
               >
                 <Flex pr={"5px"}>
@@ -166,7 +169,7 @@ const Dashboard = () => {
         >
           <Flex>
             <Text
-              fontFamily={"Poppins"}
+              fontFamily={"Nunito Sans"}
               fontSize={{ md: "20px", base: "17px" }}
               fontWeight={600}
               lineHeight={"32px"}
@@ -196,7 +199,7 @@ const Dashboard = () => {
           <Heading
             fontSize={{ md: "20px", base: "17px" }}
             fontWeight={600}
-            fontFamily={"Poppins"}
+            fontFamily={"Nunito Sans"}
             color={"rgba(5, 0, 78, 1)"}
           >
             Loan Products
@@ -217,14 +220,14 @@ const Dashboard = () => {
               <Tr>
                 <Td
                   fontSize={{ md: "14px", base: "12px" }}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Nunito Sans"}
                   textAlign={"center"}
                 >
                   01
                 </Td>
                 <Td
                   fontSize={{ md: "14px", base: "12px" }}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Nunito Sans"}
                   textAlign={"center"}
                 >
                   Salary Assurance
@@ -260,14 +263,14 @@ const Dashboard = () => {
               <Tr>
                 <Td
                   fontSize={{ md: "14px", base: "12px" }}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Nunito Sans"}
                   textAlign={"center"}
                 >
                   02
                 </Td>
                 <Td
                   fontSize={{ md: "14px", base: "12px" }}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Nunito Sans"}
                   textAlign={"center"}
                 >
                   Rent Loan
@@ -301,14 +304,14 @@ const Dashboard = () => {
               <Tr>
                 <Td
                   fontSize={{ md: "14px", base: "12px" }}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Nunito Sans"}
                   textAlign={"center"}
                 >
                   03
                 </Td>
                 <Td
                   fontSize={"14px"}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Nunito Sans"}
                   textAlign={"center"}
                 >
                   Public Sector Loan
@@ -342,14 +345,14 @@ const Dashboard = () => {
               <Tr>
                 <Td
                   fontSize={{ md: "14px", base: "12px" }}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Nunito Sans"}
                   textAlign={"center"}
                 >
                   04
                 </Td>
                 <Td
                   fontSize={{ md: "14px", base: "12px" }}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Nunito Sans"}
                   textAlign={"center"}
                 >
                   BNPL
@@ -400,7 +403,7 @@ const Dashboard = () => {
               <Heading
                 fontSize={{ md: "20px", base: "17px" }}
                 fontWeight={600}
-                fontFamily={"Poppins"}
+                fontFamily={"Nunito Sans"}
                 color={"rgba(5, 0, 78, 1)"}
               >
                 Request Mapping by State
@@ -434,7 +437,7 @@ const Dashboard = () => {
           <Heading
             fontSize={{ md: "20px", base: "17px" }}
             fontWeight={600}
-            fontFamily={"Poppins"}
+            fontFamily={"Nunito Sans"}
             color={"rgba(5, 0, 78, 1)"}
           >
             Approval vs Decline
@@ -472,7 +475,7 @@ const Dashboard = () => {
                   mt={{ md: "0px", base: "2px" }}
                 />
                 <Text
-                  fontFamily={"Poppins"}
+                  fontFamily={"Nunito Sans"}
                   fontSize={{ md: "16px", base: "14px" }}
                   fontWeight={400}
                   color={"rgba(150, 165, 184, 1)"}
@@ -481,7 +484,7 @@ const Dashboard = () => {
                 </Text>
               </Flex>
               <Text
-                fontFamily={"Poppins"}
+                fontFamily={"Nunito Sans"}
                 fontWeight={600}
                 fontSize={{ md: "14px", base: "12px" }}
                 color={"rgba(34, 43, 69, 1)"}
@@ -504,7 +507,7 @@ const Dashboard = () => {
                   mt={{ md: "0px", base: "2px" }}
                 />
                 <Text
-                  fontFamily={"Poppins"}
+                  fontFamily={"Nunito Sans"}
                   fontSize={{ md: "16px", base: "14px" }}
                   fontWeight={400}
                   color={"rgba(150, 165, 184, 1)"}
@@ -513,7 +516,7 @@ const Dashboard = () => {
                 </Text>
               </Flex>
               <Text
-                fontFamily={"Poppins"}
+                fontFamily={"Nunito Sans"}
                 fontWeight={600}
                 fontSize={{ md: "14px", base: "12px" }}
                 color={"rgba(34, 43, 69, 1)"}

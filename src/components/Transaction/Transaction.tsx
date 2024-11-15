@@ -423,7 +423,7 @@ const Transaction = () => {
             variant={"none"}
             bgColor={"#D46A35"}
             color={"white"}
-            fontFamily={"Poppins"}
+            fontFamily={"Nunito Sans"}
             fontSize={{ md: "16px", base: "14px" }}
           >
             <Flex pr={"5px"}>
@@ -451,7 +451,7 @@ const Transaction = () => {
               <Td
                 fontSize={"13px"}
                 color={"#000000"}
-                fontFamily={"Poppins"}
+                fontFamily={"Nunito Sans"}
                 fontWeight={500}
                 textAlign={"center"}
                 py={"5px"}
@@ -462,7 +462,7 @@ const Transaction = () => {
               <Td
                 fontSize={"13px"}
                 color={"#000000"}
-                fontFamily={"Poppins"}
+                fontFamily={"Nunito Sans"}
                 fontWeight={500}
                 textAlign={"center"}
                 py={"5px"}
@@ -473,7 +473,7 @@ const Transaction = () => {
               <Td
                 fontSize={"13px"}
                 color={"#000000"}
-                fontFamily={"Poppins"}
+                fontFamily={"Nunito Sans"}
                 fontWeight={500}
                 textAlign={"center"}
                 py={"5px"}
@@ -484,7 +484,7 @@ const Transaction = () => {
               <Td
                 fontSize={"13px"}
                 color={"#000000"}
-                fontFamily={"Poppins"}
+                fontFamily={"Nunito Sans"}
                 fontWeight={500}
                 textAlign={"center"}
                 py={"5px"}
@@ -495,7 +495,7 @@ const Transaction = () => {
               <Td
                 fontSize={"13px"}
                 color={"#000000"}
-                fontFamily={"Poppins"}
+                fontFamily={"Nunito Sans"}
                 fontWeight={500}
                 textAlign={"center"}
                 py={"5px"}
@@ -506,7 +506,7 @@ const Transaction = () => {
               <Td
                 fontSize={"13px"}
                 color={"#000000"}
-                fontFamily={"Poppins"}
+                fontFamily={"Nunito Sans"}
                 fontWeight={500}
                 textAlign={"center"}
                 py={"5px"}
@@ -517,7 +517,7 @@ const Transaction = () => {
               <Td
                 fontSize={"13px"}
                 color={"#000000"}
-                fontFamily={"Poppins"}
+                fontFamily={"Nunito Sans"}
                 fontWeight={500}
                 textAlign={"center"}
                 py={"5px"}
@@ -528,7 +528,7 @@ const Transaction = () => {
               <Td
                 fontSize={"13px"}
                 color={"#000000"}
-                fontFamily={"Poppins"}
+                fontFamily={"Nunito Sans"}
                 fontWeight={500}
                 textAlign={"center"}
                 py={"5px"}
@@ -550,7 +550,7 @@ const Transaction = () => {
                 <Td
                   fontSize={"14px"}
                   color={"#444A6D"}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Nunito Sans"}
                   fontWeight={400}
                   textAlign={"center"}
                   py={"7px"}
@@ -561,7 +561,7 @@ const Transaction = () => {
                 <Td
                   fontSize={"12px"}
                   color={"#444A6D"}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Nunito Sans"}
                   fontWeight={400}
                   textAlign={"center"}
                   py={"10px"}
@@ -572,7 +572,7 @@ const Transaction = () => {
                 <Td
                   fontSize={"13px"}
                   color={"#444A6D"}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Nunito Sans"}
                   fontWeight={400}
                   textAlign={"center"}
                   py={"10px"}
@@ -583,7 +583,7 @@ const Transaction = () => {
                 <Td
                   fontSize={"13px"}
                   color={"#444A6D"}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Nunito Sans"}
                   fontWeight={400}
                   textAlign={"center"}
                   py={"5px"}
@@ -594,7 +594,7 @@ const Transaction = () => {
                 <Td
                   fontSize={"13px"}
                   color={"#444A6D"}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Nunito Sans"}
                   fontWeight={400}
                   textAlign={"center"}
                   py={"5px"}
@@ -613,7 +613,7 @@ const Transaction = () => {
                       ? "#FF0520"
                       : "#444A6D"
                   }
-                  fontFamily={"Poppins"}
+                  fontFamily={"Nunito Sans"}
                   fontWeight={400}
                   textAlign={"center"}
                   py={"5px"}
@@ -624,7 +624,7 @@ const Transaction = () => {
                 <Td
                   fontSize={"13px"}
                   color={"#444A6D"}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Nunito Sans"}
                   fontWeight={400}
                   textAlign={"center"}
                   py={"5px"}
@@ -635,7 +635,7 @@ const Transaction = () => {
                 <Td
                   fontSize={"13px"}
                   color={"#444A6D"}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Nunito Sans"}
                   fontWeight={400}
                   textAlign={"center"}
                   py={"5px"}
@@ -646,7 +646,7 @@ const Transaction = () => {
                 <Td
                   fontSize={"13px"}
                   color={"#444A6D"}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Nunito Sans"}
                   fontWeight={400}
                   textAlign={"center"}
                   py={"5px"}
@@ -663,7 +663,7 @@ const Transaction = () => {
       <Flex justifyContent={"space-between"} alignItems={"center"}>
         <Text
           fontSize={"12px"}
-          fontFamily={"Poppins"}
+          fontFamily={"Nunito Sans"}
           color={"#687182"}
           fontWeight={500}
           onClick={() => handleRowsPerPageChange(0)}
@@ -675,7 +675,7 @@ const Transaction = () => {
         <Flex justifyContent={"center"} alignItems={"center"}>
           <Text
             fontSize={"13px"}
-            fontFamily={"Poppins"}
+            fontFamily={"Nunito Sans"}
             color={"#687182"}
             fontWeight={500}
           >
@@ -691,7 +691,7 @@ const Transaction = () => {
           </Button>
           <Text
             fontSize={"12px"}
-            fontFamily={"Poppins"}
+            fontFamily={"Nunito Sans"}
             color={"#687182"}
             fontWeight={500}
           >

@@ -133,7 +133,7 @@ const StatsCard = () => {
             <Flex flexDirection={"column"} gap={"10px"}>
               <Heading
                 fontSize={{ lg: "24px", md: "20px", base: "24px" }}
-                fontFamily={"Poppins"}
+                fontFamily={"Nunito Sans"}
                 fontWeight={600}
                 lineHeight={"32px"}
               >
@@ -149,7 +149,7 @@ const StatsCard = () => {
               </Text>
               <Text
                 fontSize={{ lg: "12px", md: "11px", base: "12px" }}
-                fontFamily={"Poppins"}
+                fontFamily={"Nunito Sans"}
                 fontWeight={500}
                 lineHeight={"12px"}
                 color={"rgba(64, 121, 237, 1)"}

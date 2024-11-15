@@ -36,7 +36,7 @@ const SignIn = () => {
             <Text
               color={"white"}
               mt={"60px"}
-              fontFamily={"Poppins"}
+              fontFamily={"Nunito Sans"}
               fontSize={"20px"}
               fontWeight={600}
               position={"absolute"}
@@ -57,7 +57,7 @@ const SignIn = () => {
               height={"440px"}
               mx={"auto"}
             />
-            <Text color={"white"} fontFamily={"Poppins"}>
+            <Text color={"white"} fontFamily={"Nunito Sans"}>
               Africa’s Leading Credit as a Platform Solution
             </Text>
           </Flex>
@@ -78,7 +78,7 @@ const SignIn = () => {
             <Flex flexDirection={"column"} gap={"10px"}>
               <Heading
                 as={"h1"}
-                fontFamily={"Poppins"}
+                fontFamily={"Nunito Sans"}
                 fontSize={"18px"}
                 fontWeight={"bold"}
                 textTransform={"capitalize"}
@@ -86,7 +86,7 @@ const SignIn = () => {
                 welcome back
               </Heading>
               <Text
-                fontFamily={"Poppins"}
+                fontFamily={"Nunito Sans"}
                 fontWeight={500}
                 fontSize={"16px"}
                 textTransform={"capitalize"}
@@ -96,24 +96,24 @@ const SignIn = () => {
             </Flex>
             <Flex flexDirection={"column"} pt={"25px"} gap={"10px"}>
               <Flex flexDirection={"column"} gap={2}>
-                <Text fontFamily={"Poppins"} fontWeight={500} fontSize={"16px"}>
+                <Text fontFamily={"Nunito Sans"} fontWeight={500} fontSize={"16px"}>
                   Email
                 </Text>
                 <Input
                   type={"email"}
                   placeholder={"Your email address"}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Nunito Sans"}
                   fontSize={"16px"}
                 />
               </Flex>
               <Flex flexDirection={"column"} gap={2}>
-                <Text fontFamily={"Poppins"} fontWeight={500} fontSize={"16px"}>
+                <Text fontFamily={"Nunito Sans"} fontWeight={500} fontSize={"16px"}>
                   Password
                 </Text>
                 <Input
                   type={"password"}
                   placeholder={"Your email address"}
-                  fontFamily={"Poppins"}
+                  fontFamily={"Nunito Sans"}
                   fontSize={"16px"}
                 />
               </Flex>
@@ -126,7 +126,7 @@ const SignIn = () => {
               bgColor={"rgba(212, 106, 53, 1)"}
               color={"white"}
               textTransform={"uppercase"}
-              fontFamily={"Poppins"}
+              fontFamily={"Nunito Sans"}
               _hover={{
                 bg: "#f1f2f3",
                 color: "rgba(212, 106, 53, 1)",
@@ -138,7 +138,7 @@ const SignIn = () => {
             <Text
               textAlign={"center"}
               mt={"20px"}
-              fontFamily={"Poppins"}
+              fontFamily={"Nunito Sans"}
               color={"rgba(212, 106, 53, 1)"}
               fontSize={"14px"}
               fontWeight={500}

@@ -116,7 +116,7 @@ const LinkItems: Array<LinkItemProps> = [
         <path fill="none" d="M0 0h36v36H0z" />
       </svg>
     ),
-    path: '/detail'
+    path: '/clients'
   },
   {
     name: "Credit Search",
@@ -228,7 +228,7 @@ const LinkItems: Array<LinkItemProps> = [
         />
       </svg>
     ),
-    path: '/settings'
+    path: '/setting'
   },
   {
     name: "Sign Out",
@@ -254,21 +254,21 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
 
   return (
     <Box
-      transition="3s ease"
+      transition="all 3s ease-in-out"
       bg={"white"}
       borderRight="1px"
       borderRightColor={"#f1f2f3"}
-      w={{ base: "full", md: 60 }} 
+      w={{ base: "full", md: 60 }}
       pos="fixed"
       h="full"
       maxH={"100vh"}
       overflowY={"auto"}
       sx={{
         "&::-webkit-scrollbar": {
-          display: "none", 
+          display: "none",
         },
       }}
-      display={{ base: "block", md: "block", lg: 'none' }}
+      display={{ base: "block", md: "block", lg: "none" }}
       {...rest}
     >
       <Flex alignItems="center" mx="4" justifyContent="space-between" my={6}>
@@ -289,6 +289,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
           activePage={activePage}
           setActivePage={setActivePage}
           path={link?.path}
+          onClick={onClose}
         >
           {link.name}
         </NavItem>
@@ -304,6 +305,7 @@ const NavItem = ({
   activePage,
   setActivePage,
   path,
+  onClick,
 }: NavItemProps) => {
   const navigate = useNavigate();
   return (
@@ -312,6 +314,7 @@ const NavItem = ({
       alignItems={"center"}
       style={{ textDecoration: "none" }}
       _focus={{ boxShadow: "none" }}
+      onClick={onClick}
     >
       <Flex
         align="center"
@@ -324,7 +327,7 @@ const NavItem = ({
         cursor="pointer"
         bg={activePage === name ? "rgba(212, 106, 53, 1)" : "transparent"}
         color={activePage === name ? "white" : "#737791"}
-        fontFamily={"Poppins"}
+        fontFamily={"Nunito Sans"}
         fontSize={"18px"}
         lineHeight={"27px"}
         _hover={{
@@ -374,7 +377,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         <Flex>
           <Text
             color={"black"}
-            fontFamily={"Poppins"}
+            fontFamily={"Nunito Sans"}
             fontSize={"24px"}
             lineHeight={"33.6px"}
             fontWeight={600}
@@ -418,10 +421,14 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                     spacing="1px"
                     ml="2"
                   >
-                    <Text fontSize="sm" fontFamily={"Poppins"}>
+                    <Text fontSize="sm" fontFamily={"Nunito Sans"}>
                       Jon
                     </Text>
-                    <Text fontSize="xs" fontFamily={"Poppins"} color="gray.600">
+                    <Text
+                      fontSize="xs"
+                      fontFamily={"Nunito Sans"}
+                      color="gray.600"
+                    >
                       Admin
                     </Text>
                   </VStack>
@@ -433,7 +440,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               <MenuList
                 bg={useColorModeValue("white", "gray.900")}
                 borderColor={useColorModeValue("gray.200", "gray.700")}
-                fontFamily={"Poppins"}
+                fontFamily={"Nunito Sans"}
               >
                 <MenuItem>Profile</MenuItem>
                 <MenuItem>Settings</MenuItem>
@@ -465,9 +472,11 @@ const Sidebar = () => {
         onClose={onClose}
         returnFocusOnClose={false}
         onOverlayClick={onClose}
-        size="full"
+        size={"200px"}
+        
+        
       >
-        <DrawerContent>
+        <DrawerContent bg={'transparent'}>
           <SidebarContent onClose={onClose} />
         </DrawerContent>
       </Drawer>
