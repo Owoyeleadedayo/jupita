@@ -2169,7 +2169,7 @@ const Analyze = () => {
           <Flex gap={{ md: "10px", base: "4px" }} flexDirection={"row-reverse"}>
             <InputGroup bg="#F9FAFB" width={"350px"}>
               <InputLeftElement pointerEvents="none">
-                <BsSearch color="#D46A35" fontSize={"18px"} />
+                <BsSearch color="#2261B0" fontSize={"18px"} />
               </InputLeftElement>
               <Input placeholder="Search here..." />
             </InputGroup>
@@ -2179,7 +2179,7 @@ const Analyze = () => {
               gap={"10px"}
               color={"#737791"}
             >
-              <IoFilterOutline color="#D46A35" fontSize={"18px"} />
+              <IoFilterOutline color="#2261B0" fontSize={"18px"} />
               Filter
             </Button>
           </Flex>
@@ -2211,7 +2211,7 @@ const Analyze = () => {
                     fontWeight={500}
                     fontSize={"14px"}
                     color={"#000000"}
-                    textTransform={'capitalize'}
+                    textTransform={"capitalize"}
                   >
                     {item.name}
                   </Th>
@@ -2225,7 +2225,7 @@ const Analyze = () => {
                   onClick={() => {
                     navigate(`/analyze/${tableBody.name}`);
                   }}
-                  cursor={'pointer'}
+                  cursor={"pointer"}
                 >
                   <Td>
                     <Flex alignItems={"center"}>

@@ -13,7 +13,7 @@ import {
 import  Lottie  from "lottie-react";
 
 
-import Ani from '../assets/animation/Animation - 1730419461708.json'
+import Ani from "../assets/animation/Animation - 1733246397386.json";
 
 interface IModalPage {
   isOpen: boolean;
@@ -37,7 +37,7 @@ const ModalPage = ({ isOpen, onClose }: IModalPage) => {
             >
               <Lottie
                 animationData={Ani}
-                loop={true}
+                loop={false}
                 style={{ width: "60%", height: "auto" }}
               />
               <Text

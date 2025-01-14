@@ -2221,7 +2221,7 @@ const ClientsDocument = () => {
         <Button
           width={"86px"}
           height={"30px"}
-          bgColor={"#D46A35"}
+          bgColor={"#2261B0"}
           borderRadius={"8px"}
           fontFamily={"Nunito Sans"}
           fontSize={"10px"}

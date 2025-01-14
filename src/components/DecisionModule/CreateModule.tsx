@@ -1,21 +1,13 @@
 import {
-  Box,
   Button,
   Flex,
-  Heading,
-  Input,
-  Text,
-  Table,
-  TableContainer,
-  Tbody,
-  Td,
-  Th,
-  Thead,
-  Tr,
   Select,
+  Text,
 } from "@chakra-ui/react";
+import { IoIosAdd } from "react-icons/io";
+import { MdOutlineKeyboardBackspace } from "react-icons/md";
+import { RiDeleteBin5Line } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
-import { MdOutlineKeyboardBackspace, MdQuestionMark } from "react-icons/md";
 
 const CreateModule = () => {
   const navigate = useNavigate();
@@ -31,22 +23,18 @@ const CreateModule = () => {
         <Flex
           width={"100%"}
           height={"100%"}
-          bgColor={"#FFFFFF"}
-          borderRadius={"8px"}
-          boxShadow="0px 4px 8px rgba(0, 0, 0, 0.2)"
           p={"10px"}
           direction={"column"}
-          gap={"30px"}
+          gap={"10px"}
         >
-          <Flex gap={"10px"}>
+          <Flex gap={"5px"}>
             <Flex
               width={"25px"}
               height={"25px"}
-              bgColor={"white"}
               justifyContent={"center"}
               alignItems={"center"}
               borderRadius={"50%"}
-              color={"#D46A35"}
+              color={"#2261B0"}
               cursor={"pointer"}
               onClick={() => {
                 navigate(-1);
@@ -64,1311 +52,376 @@ const CreateModule = () => {
               Back
             </Text>
           </Flex>
-          <Heading
-            fontFamily={"Nunito Sans"}
-            fontWeight={600}
-            fontSize={"20px"}
-            color={"#000000"}
-            textAlign={"center"}
-          >
-            Create New Module
-          </Heading>
-
-          <Flex justifyContent={"space-between"}>
-            <Flex direction={"column"} gap={"5px"}>
-              <Text
-                fontFamily={"Nunito Sans"}
-                fontWeight={400}
-                fontSize={"14px"}
-                color={"#000000"}
-                textTransform={"capitalize"}
-              >
-                Decision module name
-              </Text>
-              <Input
-                width={"400px"}
-                borderRadius={"8px"}
-                border={"1px solid #C4C4C4"}
-                fontFamily={"Nunito Sans"}
-                _focus={{
-                  border: "1px solid #D46A35",
-                }}
-                variant={"none"}
-              />
-            </Flex>
-
-            <Flex pt={"30px"}>
-              <Button
-                variant={"none"}
-                fontFamily={"Nunito Sans"}
-                fontWeight={400}
-                fontSize={"14px"}
-                color={"#D46A35"}
-                justifyContent={"center"}
-                alignItems={"center"}
-              >
-                Edit
-              </Button>
-              <Button
-                variant={"none"}
-                fontFamily={"Nunito Sans"}
-                fontWeight={400}
-                fontSize={"14px"}
-                color={"#D46A35"}
-                justifyContent={"center"}
-                alignItems={"center"}
-              >
-                Save changes
-              </Button>
-            </Flex>
-          </Flex>
         </Flex>
 
-        <Box
+        <Flex
+          width={"100%"}
+          height={"100%"}
+          p={"15px"}
           bgColor={"#FFFFFF"}
           borderRadius={"8px"}
-          boxShadow="0px 4px 8px rgba(0, 0, 0, 0.2)"
+          direction={"column"}
+          gap={"25px"}
         >
-          <Flex p={"20px"}>
+          <Flex width={"100%"} justifyContent={"center"} alignItems={"center"}>
             <Text
-              fontFamily={"Nunito Sans"}
-              fontWeight={600}
+              fontFamily={"NUnito Sans"}
+              fontWeight={400}
               fontSize={"20px"}
               color={"#151D48"}
             >
-              Define KYC Rule
+              Create New Product
             </Text>
           </Flex>
-          <TableContainer width={"100%"}>
-            <Table>
-              <Thead>
-                <Tr>
-                  <Th
-                    fontFamily={"Nunito Sans"}
-                    fontWeight={800}
-                    fontSize={"14px"}
-                    color={"#000000"}
-                    textTransform={"capitalize"}
-                  >
-                    Parameter
-                  </Th>
-                  <Th
-                    fontFamily={"Nunito Sans"}
-                    fontWeight={800}
-                    fontSize={"14px"}
-                    color={"#000000"}
-                    textTransform={"capitalize"}
-                  >
-                    Parameter Type
-                  </Th>
-                  <Th
-                    fontFamily={"Nunito Sans"}
-                    fontWeight={800}
-                    fontSize={"14px"}
-                    color={"#000000"}
-                    textTransform={"capitalize"}
-                  >
-                    Operator
-                  </Th>
-                  <Th
-                    fontFamily={"Nunito Sans"}
-                    fontWeight={800}
-                    fontSize={"14px"}
-                    color={"#000000"}
-                    textTransform={"capitalize"}
-                  >
-                    Value
-                  </Th>
-                  <Th
-                    fontFamily={"Nunito Sans"}
-                    fontWeight={800}
-                    fontSize={"14px"}
-                    color={"#000000"}
-                    textTransform={"capitalize"}
-                  ></Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                <Tr>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="Age"
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option value="">Select Age</option>
-                        {Array.from({ length: 83 }, (_, i) => i + 18).map(
-                          (age) => (
-                            <option key={age} value={age}>
-                              {age}
-                            </option>
-                          )
-                        )}
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="Integer"
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>VarChar</option>
-                        <option>Float</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="Between"
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>Hello</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex gap={"3px"}>
-                      <Input
-                        border={"none"}
-                        width={"50px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      />
-                      <Text
-                        pt={"20px"}
-                        fontFamily={"Nunito Sans"}
-                        fontWeight={400}
-                        fontSize={"16px"}
-                      >
-                        and
-                      </Text>
-                      <Input
-                        border={"none"}
-                        width={"50px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      />
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Button
-                        variant={"none"}
-                        fontFamily={"Nunito Sans"}
-                        fontWeight={400}
-                        fontSize={"14px"}
-                        color={"#FC0C0C"}
-                      >
-                        Delete
-                      </Button>
-                    </Flex>
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="State of Residence"
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>Hello</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="Varchar"
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>Hello</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="In"
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>Hello</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Input
-                      placeholder="5 selections"
-                      textColor={"#D46A35"}
-                      border={"none"}
-                      width={"120px"}
-                      borderBottom={"1px solid black"}
-                      borderRadius={"0px"}
-                    />
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Button
-                        variant={"none"}
-                        fontFamily={"Nunito Sans"}
-                        fontWeight={400}
-                        fontSize={"14px"}
-                        color={"#FC0C0C"}
-                      >
-                        Delete
-                      </Button>
-                    </Flex>
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="Net Income"
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>Hello</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="Float"
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>Hello</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="Minimum"
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>Hello</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Input
-                      placeholder="50,000.00"
-                      textColor={"#D46A35"}
-                      border={"none"}
-                      width={"120px"}
-                      borderBottom={"1px solid black"}
-                      borderRadius={"0px"}
-                    />
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Button
-                        variant={"none"}
-                        fontFamily={"Nunito Sans"}
-                        fontWeight={400}
-                        fontSize={"14px"}
-                        color={"#FC0C0C"}
-                      >
-                        Delete
-                      </Button>
-                    </Flex>
-                  </Td>
-                </Tr>
-              </Tbody>
-            </Table>
-          </TableContainer>
 
-          <Flex p={"20px"} justifyContent={"space-between"}>
-            <Button
-              width={"80px"}
-              height={"30px"}
-              bgColor={"#FFF4EE"}
-              fontFamily={"Nunito Sans"}
-              fontWeight={800}
-              fontSize={"14px"}
-              color={"#D46A35"}
-              p={"3px"}
-            >
-              Add Rule +
-            </Button>
-
-            <Button variant={"none"} color={"#D46A35"} pb={"3px"}>
-              Save changes
-            </Button>
-          </Flex>
-        </Box>
-
-        <Box
-          bgColor={"#FFFFFF"}
-          borderRadius={"8px"}
-          boxShadow="0px 4px 8px rgba(0, 0, 0, 0.2)"
-        >
-          <Flex p={"20px"}>
+          <Flex direction={"column"} gap={"5px"}>
             <Text
               fontFamily={"Nunito Sans"}
-              fontWeight={600}
-              fontSize={"20px"}
-              color={"#151D48"}
-            >
-              Define Credit Bureau Rule
-            </Text>
-          </Flex>
-          <TableContainer width={"100%"}>
-            <Table>
-              <Thead>
-                <Tr>
-                  <Th
-                    fontFamily={"Nunito Sans"}
-                    fontWeight={800}
-                    fontSize={"14px"}
-                    color={"#000000"}
-                    textTransform={"capitalize"}
-                  >
-                    Parameter
-                  </Th>
-                  <Th
-                    fontFamily={"Nunito Sans"}
-                    fontWeight={800}
-                    fontSize={"14px"}
-                    color={"#000000"}
-                    textTransform={"capitalize"}
-                  >
-                    Parameter Type
-                  </Th>
-                  <Th
-                    fontFamily={"Nunito Sans"}
-                    fontWeight={800}
-                    fontSize={"14px"}
-                    color={"#000000"}
-                    textTransform={"capitalize"}
-                  >
-                    Operator
-                  </Th>
-                  <Th
-                    fontFamily={"Nunito Sans"}
-                    fontWeight={800}
-                    fontSize={"14px"}
-                    color={"#000000"}
-                    textTransform={"capitalize"}
-                  >
-                    Value
-                  </Th>
-                  <Th
-                    fontFamily={"Nunito Sans"}
-                    fontWeight={800}
-                    fontSize={"14px"}
-                    color={"#000000"}
-                    textTransform={"capitalize"}
-                  ></Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                <Tr>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="Past Due Loans (60..."
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>Hello</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="Integer"
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>Hello</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="Between"
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>Hello</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex gap={"3px"}>
-                      <Input
-                        border={"none"}
-                        width={"50px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      />
-                      <Text
-                        pt={"20px"}
-                        fontFamily={"Nunito Sans"}
-                        fontWeight={400}
-                        fontSize={"16px"}
-                      >
-                        and
-                      </Text>
-                      <Input
-                        border={"none"}
-                        width={"50px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      />
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Button
-                        variant={"none"}
-                        fontFamily={"Nunito Sans"}
-                        fontWeight={400}
-                        fontSize={"14px"}
-                        color={"#FC0C0C"}
-                      >
-                        Delete
-                      </Button>
-                    </Flex>
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="Past Due Loans (90..."
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>Hello</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="Integer"
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>Hello</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="Between"
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>Hello</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex gap={"3px"}>
-                      <Input
-                        border={"none"}
-                        width={"50px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      />
-                      <Text
-                        pt={"20px"}
-                        fontFamily={"Nunito Sans"}
-                        fontWeight={400}
-                        fontSize={"16px"}
-                      >
-                        and
-                      </Text>
-                      <Input
-                        border={"none"}
-                        width={"50px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      />
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Button
-                        variant={"none"}
-                        fontFamily={"Nunito Sans"}
-                        fontWeight={400}
-                        fontSize={"14px"}
-                        color={"#FC0C0C"}
-                      >
-                        Delete
-                      </Button>
-                    </Flex>
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="Inquiry in 12 months"
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>Hello</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="Integer"
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>Hello</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="between"
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>Hello</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex gap={"3px"}>
-                      <Input
-                        border={"none"}
-                        width={"50px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      />
-                      <Text
-                        pt={"20px"}
-                        fontFamily={"Nunito Sans"}
-                        fontWeight={400}
-                        fontSize={"16px"}
-                      >
-                        and
-                      </Text>
-                      <Input
-                        border={"none"}
-                        width={"50px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      />
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Button
-                        variant={"none"}
-                        fontFamily={"Nunito Sans"}
-                        fontWeight={400}
-                        fontSize={"14px"}
-                        color={"#FC0C0C"}
-                      >
-                        Delete
-                      </Button>
-                    </Flex>
-                  </Td>
-                </Tr>
-              </Tbody>
-            </Table>
-          </TableContainer>
-
-          <Flex p={"20px"} justifyContent={"space-between"}>
-            <Button
-              width={"80px"}
-              height={"30px"}
-              bgColor={"#FFF4EE"}
-              fontFamily={"Nunito Sans"}
-              fontWeight={800}
+              fontWeight={400}
               fontSize={"14px"}
-              color={"#D46A35"}
-              p={"3px"}
+              color={"#979797"}
             >
-              Add Rule +
-            </Button>
-
-            <Button variant={"none"} color={"#D46A35"} pb={"3px"}>
-              Save changes
-            </Button>
-          </Flex>
-        </Box>
-
-        <Box
-          bgColor={"#FFFFFF"}
-          borderRadius={"8px"}
-          boxShadow="0px 4px 8px rgba(0, 0, 0, 0.2)"
-        >
-          <Flex p={"20px"}>
-            <Text
-              fontFamily={"Nunito Sans"}
-              fontWeight={600}
-              fontSize={"20px"}
-              color={"#151D48"}
-            >
-              Loan Offer
+              Product Name
             </Text>
-          </Flex>
-          <TableContainer width={"100%"}>
-            <Table>
-              <Thead>
-                <Tr>
-                  <Th
-                    fontFamily={"Nunito Sans"}
-                    fontWeight={800}
-                    fontSize={"14px"}
-                    color={"#000000"}
-                    textTransform={"capitalize"}
-                  >
-                    Parameter
-                  </Th>
-                  <Th
-                    fontFamily={"Nunito Sans"}
-                    fontWeight={800}
-                    fontSize={"14px"}
-                    color={"#000000"}
-                    textTransform={"capitalize"}
-                  >
-                    Parameter Type
-                  </Th>
-                  <Th
-                    fontFamily={"Nunito Sans"}
-                    fontWeight={800}
-                    fontSize={"14px"}
-                    color={"#000000"}
-                    textTransform={"capitalize"}
-                  >
-                    Operator
-                  </Th>
-                  <Th
-                    fontFamily={"Nunito Sans"}
-                    fontWeight={800}
-                    fontSize={"14px"}
-                    color={"#000000"}
-                    textTransform={"capitalize"}
-                  >
-                    Value
-                  </Th>
-                  <Th
-                    fontFamily={"Nunito Sans"}
-                    fontWeight={800}
-                    fontSize={"14px"}
-                    color={"#000000"}
-                    textTransform={"capitalize"}
-                  ></Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                <Tr>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="Loan Amount"
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>Hello</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="Integer"
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>Hello</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="Between"
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>Hello</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex gap={"3px"}>
-                      <Input
-                        border={"none"}
-                        width={"50px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      />
-                      <Text
-                        pt={"20px"}
-                        fontFamily={"Nunito Sans"}
-                        fontWeight={400}
-                        fontSize={"16px"}
-                      >
-                        and
-                      </Text>
-                      <Input
-                        border={"none"}
-                        width={"50px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      />
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Button
-                        variant={"none"}
-                        fontFamily={"Nunito Sans"}
-                        fontWeight={400}
-                        fontSize={"14px"}
-                        color={"#FC0C0C"}
-                      >
-                        Delete
-                      </Button>
-                    </Flex>
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="Interest Rate"
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>Hello</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="Integer"
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>Hello</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="Between"
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>Hello</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex gap={"3px"}>
-                      <Input
-                        border={"none"}
-                        width={"50px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      />
-                      <Text
-                        pt={"20px"}
-                        fontFamily={"Nunito Sans"}
-                        fontWeight={400}
-                        fontSize={"16px"}
-                      >
-                        and
-                      </Text>
-                      <Input
-                        border={"none"}
-                        width={"50px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      />
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Button
-                        variant={"none"}
-                        fontFamily={"Nunito Sans"}
-                        fontWeight={400}
-                        fontSize={"14px"}
-                        color={"#FC0C0C"}
-                      >
-                        Delete
-                      </Button>
-                    </Flex>
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="inquiry in 12 months"
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>Hello</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="Integer"
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>Hello</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Select
-                        placeholder="Between"
-                        border={"none"}
-                        width={"120px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      >
-                        <option>Hello</option>
-                      </Select>
-                      <Flex
-                        width={"20px"}
-                        height={"20px"}
-                        borderRadius={"50%"}
-                        bgColor={"#FFF4EE"}
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        mb={"20px"}
-                      >
-                        <MdQuestionMark fontSize={"14px"} color="#D46A35" />
-                      </Flex>
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex gap={"3px"}>
-                      <Input
-                        border={"none"}
-                        width={"50px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      />
-                      <Text
-                        pt={"20px"}
-                        fontFamily={"Nunito Sans"}
-                        fontWeight={400}
-                        fontSize={"16px"}
-                      >
-                        and
-                      </Text>
-                      <Input
-                        border={"none"}
-                        width={"50px"}
-                        borderBottom={"1px solid black"}
-                        borderRadius={"0px"}
-                      />
-                    </Flex>
-                  </Td>
-                  <Td>
-                    <Flex alignItems={"center"}>
-                      <Button
-                        variant={"none"}
-                        fontFamily={"Nunito Sans"}
-                        fontWeight={400}
-                        fontSize={"14px"}
-                        color={"#FC0C0C"}
-                      >
-                        Delete
-                      </Button>
-                    </Flex>
-                  </Td>
-                </Tr>
-              </Tbody>
-            </Table>
-          </TableContainer>
-
-          <Flex p={"20px"} justifyContent={"space-between"}>
-            <Button
-              width={"80px"}
-              height={"30px"}
-              bgColor={"#FFF4EE"}
+            <Select
+              width={"400px"}
+              height={"40px"}
+              borderColor={"#C4C4C4"}
               fontFamily={"Nunito Sans"}
-              fontWeight={800}
+              fontWeight={400}
               fontSize={"14px"}
-              color={"#D46A35"}
-              p={"3px"}
+              color={"#000000"}
             >
-              Add Rule +
-            </Button>
+              <option value="individual-loan">Individual Loan</option>
+            </Select>
+          </Flex>
 
-            <Button variant={"none"} color={"#D46A35"} pb={"3px"}>
-              Save changes
+          <Flex direction={"column"} gap={"20px"}>
+            <Flex gap={"20px"}>
+              <Flex direction={"column"} gap={"5px"}>
+                <Text
+                  fontFamily={"Nunito Sans"}
+                  fontWeight={600}
+                  fontSize={"14px"}
+                  color={"#000000"}
+                >
+                  Parameter Name
+                </Text>
+                <Select
+                  width={"300px"}
+                  height={"40px"}
+                  borderColor={"#C4C4C4"}
+                  fontFamily={"Nunito Sans"}
+                  fontWeight={400}
+                  fontSize={"14px"}
+                  color={"#000000"}
+                >
+                  <option value="age">Age</option>
+                </Select>
+              </Flex>
+              <Flex direction={"column"} gap={"5px"}>
+                <Text
+                  fontFamily={"Nunito Sans"}
+                  fontWeight={600}
+                  fontSize={"14px"}
+                  color={"#000000"}
+                >
+                  Operator
+                </Text>
+                <Select
+                  width={"250px"}
+                  height={"40px"}
+                  borderColor={"#C4C4C4"}
+                  fontFamily={"Nunito Sans"}
+                  fontWeight={400}
+                  fontSize={"14px"}
+                  color={"#000000"}
+                >
+                  <option value="minimum">Minimum</option>
+                </Select>
+              </Flex>
+              <Flex direction={"column"} gap={"5px"}>
+                <Text
+                  fontFamily={"Nunito Sans"}
+                  fontWeight={600}
+                  fontSize={"14px"}
+                  color={"#000000"}
+                >
+                  Value
+                </Text>
+                <Select
+                  width={"250px"}
+                  height={"40px"}
+                  borderColor={"#C4C4C4"}
+                  fontFamily={"Nunito Sans"}
+                  fontWeight={400}
+                  fontSize={"14px"}
+                  color={"#000000"}
+                >
+                  <option value="21">21</option>
+                </Select>
+              </Flex>
+              <Flex
+                justify={"flex-end"}
+                alignItems={"flex-end"}
+                pl={"10px"}
+                pb={"10px"}
+                cursor={"pointer"}
+              >
+                <RiDeleteBin5Line fontSize={"22px"} color="#FC0C0CB2" />
+              </Flex>
+            </Flex>
+            <Flex gap={"20px"}>
+              <Flex direction={"column"} gap={"5px"}>
+                <Text
+                  fontFamily={"Nunito Sans"}
+                  fontWeight={600}
+                  fontSize={"14px"}
+                  color={"#000000"}
+                >
+                  Parameter Name
+                </Text>
+                <Select
+                  width={"300px"}
+                  height={"40px"}
+                  borderColor={"#C4C4C4"}
+                  fontFamily={"Nunito Sans"}
+                  fontWeight={400}
+                  fontSize={"14px"}
+                  color={"#000000"}
+                >
+                  <option value="age">Age</option>
+                </Select>
+              </Flex>
+              <Flex direction={"column"} gap={"5px"}>
+                <Text
+                  fontFamily={"Nunito Sans"}
+                  fontWeight={600}
+                  fontSize={"14px"}
+                  color={"#000000"}
+                >
+                  Operator
+                </Text>
+                <Select
+                  width={"250px"}
+                  height={"40px"}
+                  borderColor={"#C4C4C4"}
+                  fontFamily={"Nunito Sans"}
+                  fontWeight={400}
+                  fontSize={"14px"}
+                  color={"#000000"}
+                >
+                  <option value="minimum">Minimum</option>
+                </Select>
+              </Flex>
+              <Flex direction={"column"} gap={"5px"}>
+                <Text
+                  fontFamily={"Nunito Sans"}
+                  fontWeight={600}
+                  fontSize={"14px"}
+                  color={"#000000"}
+                >
+                  Value
+                </Text>
+                <Select
+                  width={"250px"}
+                  height={"40px"}
+                  borderColor={"#C4C4C4"}
+                  fontFamily={"Nunito Sans"}
+                  fontWeight={400}
+                  fontSize={"14px"}
+                  color={"#000000"}
+                >
+                  <option value="21">21</option>
+                </Select>
+              </Flex>
+              <Flex
+                justify={"flex-end"}
+                alignItems={"flex-end"}
+                pl={"10px"}
+                pb={"10px"}
+                cursor={"pointer"}
+              >
+                <RiDeleteBin5Line fontSize={"22px"} color="#FC0C0CB2" />
+              </Flex>
+            </Flex>
+            <Flex gap={"20px"}>
+              <Flex direction={"column"} gap={"5px"}>
+                <Text
+                  fontFamily={"Nunito Sans"}
+                  fontWeight={600}
+                  fontSize={"14px"}
+                  color={"#000000"}
+                >
+                  Parameter Name
+                </Text>
+                <Select
+                  width={"300px"}
+                  height={"40px"}
+                  borderColor={"#C4C4C4"}
+                  fontFamily={"Nunito Sans"}
+                  fontWeight={400}
+                  fontSize={"14px"}
+                  color={"#000000"}
+                >
+                  <option value="age">Age</option>
+                </Select>
+              </Flex>
+              <Flex direction={"column"} gap={"5px"}>
+                <Text
+                  fontFamily={"Nunito Sans"}
+                  fontWeight={600}
+                  fontSize={"14px"}
+                  color={"#000000"}
+                >
+                  Operator
+                </Text>
+                <Select
+                  width={"250px"}
+                  height={"40px"}
+                  borderColor={"#C4C4C4"}
+                  fontFamily={"Nunito Sans"}
+                  fontWeight={400}
+                  fontSize={"14px"}
+                  color={"#000000"}
+                >
+                  <option value="minimum">Minimum</option>
+                </Select>
+              </Flex>
+              <Flex direction={"column"} gap={"5px"}>
+                <Text
+                  fontFamily={"Nunito Sans"}
+                  fontWeight={600}
+                  fontSize={"14px"}
+                  color={"#000000"}
+                >
+                  Value
+                </Text>
+                <Select
+                  width={"250px"}
+                  height={"40px"}
+                  borderColor={"#C4C4C4"}
+                  fontFamily={"Nunito Sans"}
+                  fontWeight={400}
+                  fontSize={"14px"}
+                  color={"#000000"}
+                >
+                  <option value="21">21</option>
+                </Select>
+              </Flex>
+              <Flex
+                justify={"flex-end"}
+                alignItems={"flex-end"}
+                pl={"10px"}
+                pb={"10px"}
+                cursor={"pointer"}
+              >
+                <RiDeleteBin5Line fontSize={"22px"} color="#FC0C0CB2" />
+              </Flex>
+            </Flex>
+            <Flex gap={"20px"}>
+              <Flex direction={"column"} gap={"5px"}>
+                <Text
+                  fontFamily={"Nunito Sans"}
+                  fontWeight={600}
+                  fontSize={"14px"}
+                  color={"#000000"}
+                >
+                  Parameter Name
+                </Text>
+                <Select
+                  width={"300px"}
+                  height={"40px"}
+                  borderColor={"#C4C4C4"}
+                  fontFamily={"Nunito Sans"}
+                  fontWeight={400}
+                  fontSize={"14px"}
+                  color={"#000000"}
+                >
+                  <option value="age">Age</option>
+                </Select>
+              </Flex>
+              <Flex direction={"column"} gap={"5px"}>
+                <Text
+                  fontFamily={"Nunito Sans"}
+                  fontWeight={600}
+                  fontSize={"14px"}
+                  color={"#000000"}
+                >
+                  Operator
+                </Text>
+                <Select
+                  width={"250px"}
+                  height={"40px"}
+                  borderColor={"#C4C4C4"}
+                  fontFamily={"Nunito Sans"}
+                  fontWeight={400}
+                  fontSize={"14px"}
+                  color={"#000000"}
+                >
+                  <option value="minimum">Minimum</option>
+                </Select>
+              </Flex>
+              <Flex direction={"column"} gap={"5px"}>
+                <Text
+                  fontFamily={"Nunito Sans"}
+                  fontWeight={600}
+                  fontSize={"14px"}
+                  color={"#000000"}
+                >
+                  Value
+                </Text>
+                <Select
+                  width={"250px"}
+                  height={"40px"}
+                  borderColor={"#C4C4C4"}
+                  fontFamily={"Nunito Sans"}
+                  fontWeight={400}
+                  fontSize={"14px"}
+                  color={"#000000"}
+                >
+                  <option value="21">21</option>
+                </Select>
+              </Flex>
+              <Flex
+                justify={"flex-end"}
+                alignItems={"flex-end"}
+                pl={"10px"}
+                pb={"10px"}
+                cursor={"pointer"}
+              >
+                <RiDeleteBin5Line fontSize={"22px"} color="#FC0C0CB2" />
+              </Flex>
+            </Flex>
+          </Flex>
+
+          <Flex>
+            <Flex
+              justifyContent={"center"}
+              alignItems={"center"}
+              bgColor={"#FFE1D2"}
+              px={"7px"}
+              py={"5px"}
+              borderRadius={"6px"}
+            >
+              <IoIosAdd color="#000000" />
+              <Text
+                fontFamily={"Nunito Sans"}
+                fontWeight={700}
+                fontSize={"14px"}
+                color={"#000000"}
+              >
+                Add Parameter
+              </Text>
+            </Flex>
+          </Flex>
+
+          <Flex>
+            <Button variant={"none"} bgColor={"#2261B0"} color={'white'}>
+              Save
             </Button>
           </Flex>
-        </Box>
+        </Flex>
       </Flex>
     </>
   );

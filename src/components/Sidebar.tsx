@@ -22,8 +22,8 @@ import {
 } from "@chakra-ui/react";
 import { FiMenu, FiBell, FiChevronDown } from "react-icons/fi";
 import Logo from "../assets/Images/jupita.png";
-import { ReactNode, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { ReactNode,  useState } from "react";
+import {  useNavigate } from "react-router-dom";
 
 interface LinkItemProps {
   name: string;
@@ -64,7 +64,7 @@ const LinkItems: Array<LinkItemProps> = [
         />
       </svg>
     ),
-    path: '/dashboard'
+    path: "/dashboard",
   },
   {
     name: "Transaction",
@@ -81,7 +81,7 @@ const LinkItems: Array<LinkItemProps> = [
         />
       </svg>
     ),
-    path: "/transaction"
+    path: "/transaction",
   },
   {
     name: "Clients",
@@ -116,7 +116,7 @@ const LinkItems: Array<LinkItemProps> = [
         <path fill="none" d="M0 0h36v36H0z" />
       </svg>
     ),
-    path: '/clients'
+    path: "/clients",
   },
   {
     name: "Credit Search",
@@ -133,7 +133,7 @@ const LinkItems: Array<LinkItemProps> = [
         ></path>
       </svg>
     ),
-    path: '/credit-search'
+    path: "/credit-search",
   },
 
   {
@@ -154,7 +154,7 @@ const LinkItems: Array<LinkItemProps> = [
         ></path>
       </svg>
     ),
-    path: '/analyze'
+    path: "/analyze",
   },
   {
     name: "Decision Module",
@@ -171,7 +171,7 @@ const LinkItems: Array<LinkItemProps> = [
         ></path>
       </svg>
     ),
-    path: '/decision-module'
+    path: "/decision-module",
   },
   {
     name: "Reporting",
@@ -188,7 +188,7 @@ const LinkItems: Array<LinkItemProps> = [
         ></path>
       </svg>
     ),
-    path: '/reporting'
+    path: "/reporting",
   },
   {
     name: "Logs",
@@ -211,7 +211,7 @@ const LinkItems: Array<LinkItemProps> = [
         </g>
       </svg>
     ),
-    path: '/logs'
+    path: "/logs",
   },
   {
     name: "Settings",
@@ -228,7 +228,7 @@ const LinkItems: Array<LinkItemProps> = [
         />
       </svg>
     ),
-    path: '/setting'
+    path: "/setting",
   },
   {
     name: "Sign Out",
@@ -245,12 +245,26 @@ const LinkItems: Array<LinkItemProps> = [
         />
       </svg>
     ),
-    path: '/sign-out'
+    path: "/sign-out",
   },
 ];
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
-  const [activePage, setActivePage] = useState("");
+  const [activePage, setActivePage] = useState("/");
+
+  // const location = useLocation()
+
+  // useEffect(() => {
+  //   if (location.pathname === "/") {
+  //     setActivePage("Dashboard");
+  //   } else {
+  //     const page = LinkItems.find((item) => {
+  //       return location.pathname === item.path;
+  //     });
+  //     setActivePage(page!.name);
+  //   }
+  // }, [location.pathname]);
+  
 
   return (
     <Box
@@ -325,13 +339,13 @@ const NavItem = ({
         borderRadius={"10px"}
         role="group"
         cursor="pointer"
-        bg={activePage === name ? "rgba(212, 106, 53, 1)" : "transparent"}
+        bg={activePage === name ? "#2261B0" : "transparent"}
         color={activePage === name ? "white" : "#737791"}
         fontFamily={"Nunito Sans"}
         fontSize={"18px"}
         lineHeight={"27px"}
         _hover={{
-          bg: "rgba(212, 106, 53, 1)",
+          bg: "#2261B0",
           color: "white",
         }}
         onClick={() => {

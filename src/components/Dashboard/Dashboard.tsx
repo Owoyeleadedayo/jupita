@@ -45,7 +45,7 @@ const Dashboard = () => {
           base: "flex-start",
         }}
         flexDirection={{ lg: "row", md: "row", base: "column" }}
-        mx={{ md: "5px", base: "0px"}}
+        mx={{ md: "5px", base: "0px" }}
         p={{ md: "20px", base: "15px" }}
         borderRadius={"8px"}
         bgColor={"white"}
@@ -87,31 +87,33 @@ const Dashboard = () => {
           <Button
             width={{ md: "227px", base: "120px" }}
             height={{ md: "40px", base: "30px" }}
-            bgColor={"rgba(212, 106, 53, 1)"}
+            bgColor={"#2261B0"}
             textAlign={"center"}
-            fontSize={{ md: "14px", base: "12px" }}
+            fontSize={{ md: "14px", xl: "14px" }}
             lineHeight={"20px"}
             fontFamily={"Nunito Sans"}
             fontWeight={500}
             color={"white"}
             _hover={{
               bg: "white",
-              border: "1px solid rgba(212, 106, 53, 1)",
-              color: "rgba(212, 106, 53, 1)",
+              border: "1px solid #2261B0",
+              color: "#2261B0",
             }}
-            onClick={() => {navigate('/api-status')}}
+            onClick={() => {
+              navigate("/api-status");
+            }}
           >
             View API Status
           </Button>
         </Flex>
       </Flex>
       {/* first Grid */}
-      <Grid mb={{  md: "50px", base: "20px" }}>
+      <Grid mb={{ md: "50px", base: "20px" }}>
         <GridItem
           mx={{ md: "5px", base: "3px" }}
           my={{ md: "20px", base: "10px" }}
           p={{ md: "20px", base: "16px" }}
-          height={'100%'}
+          height={"100%"}
           borderRadius={"8px"}
           bgColor={"white"}
           boxShadow={"0px 4px 10px rgba(0, 0, 0, 0.1)"}
@@ -209,11 +211,13 @@ const Dashboard = () => {
               <Tr>
                 <Th textAlign={"center"}>#</Th>
                 <Th textAlign={"center"}>Name</Th>
-                <Th textAlign={"center"} display={{xl: 'flex', lg:'none', md: "flex", base: "none" }}>
+                <Th
+                  textAlign={"center"}
+                  display={{ xl: "flex", lg: "none", md: "flex", base: "none" }}
+                >
                   Volume
                 </Th>
-                <Th>
-                </Th>
+                <Th></Th>
               </Tr>
             </Thead>
             <Tbody>

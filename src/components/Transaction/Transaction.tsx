@@ -402,7 +402,7 @@ const Transaction = () => {
         <Flex gap={{ md: "10px", base: "4px" }}>
           <InputGroup bg="#F9FAFB" width={{ md: "350px", lg: "150px" }}>
             <InputLeftElement pointerEvents="none">
-              <BsSearch color="#D46A35" fontSize={"18px"} />
+              <BsSearch color="#2261B0" fontSize={"18px"} />
             </InputLeftElement>
             <Input placeholder="Search here..." />
           </InputGroup>
@@ -412,7 +412,7 @@ const Transaction = () => {
             gap={"10px"}
             color={"#737791"}
           >
-            <IoFilterOutline color="#D46A35" fontSize={"18px"} />
+            <IoFilterOutline color="#2261B0" fontSize={"18px"} />
             Filter
           </Button>
         </Flex>
@@ -421,7 +421,7 @@ const Transaction = () => {
             px={{ md: "12px", base: "3px" }}
             py={{ md: "5px", base: "1px" }}
             variant={"none"}
-            bgColor={"#D46A35"}
+            bgColor={"#2261B0"}
             color={"white"}
             fontFamily={"Nunito Sans"}
             fontSize={{ md: "16px", base: "14px" }}
@@ -439,13 +439,7 @@ const Transaction = () => {
           <Thead>
             <Tr>
               {" "}
-              <Td
-                fontSize={"13px"}
-                color={"#96A5B8"}
-                textAlign={"center"}
-                py={"5px"}
-                px={"10px"}
-              >
+              <Td fontSize={"13px"} color={"#96A5B8"} py={"5px"} px={"10px"}>
                 #
               </Td>
               <Td
@@ -453,7 +447,6 @@ const Transaction = () => {
                 color={"#000000"}
                 fontFamily={"Nunito Sans"}
                 fontWeight={500}
-                textAlign={"center"}
                 py={"5px"}
                 px={"10px"}
               >
@@ -464,7 +457,6 @@ const Transaction = () => {
                 color={"#000000"}
                 fontFamily={"Nunito Sans"}
                 fontWeight={500}
-                textAlign={"center"}
                 py={"5px"}
                 px={"10px"}
               >
@@ -475,7 +467,6 @@ const Transaction = () => {
                 color={"#000000"}
                 fontFamily={"Nunito Sans"}
                 fontWeight={500}
-                textAlign={"center"}
                 py={"5px"}
                 px={"10px"}
               >
@@ -486,7 +477,6 @@ const Transaction = () => {
                 color={"#000000"}
                 fontFamily={"Nunito Sans"}
                 fontWeight={500}
-                textAlign={"center"}
                 py={"5px"}
                 px={"10px"}
               >
@@ -497,7 +487,6 @@ const Transaction = () => {
                 color={"#000000"}
                 fontFamily={"Nunito Sans"}
                 fontWeight={500}
-                textAlign={"center"}
                 py={"5px"}
                 px={"10px"}
               >
@@ -508,7 +497,6 @@ const Transaction = () => {
                 color={"#000000"}
                 fontFamily={"Nunito Sans"}
                 fontWeight={500}
-                textAlign={"center"}
                 py={"5px"}
                 px={"10px"}
               >
@@ -519,7 +507,6 @@ const Transaction = () => {
                 color={"#000000"}
                 fontFamily={"Nunito Sans"}
                 fontWeight={500}
-                textAlign={"center"}
                 py={"5px"}
                 px={"10px"}
               >
@@ -530,7 +517,6 @@ const Transaction = () => {
                 color={"#000000"}
                 fontFamily={"Nunito Sans"}
                 fontWeight={500}
-                textAlign={"center"}
                 py={"5px"}
                 px={"10px"}
               >
@@ -552,9 +538,8 @@ const Transaction = () => {
                   color={"#444A6D"}
                   fontFamily={"Nunito Sans"}
                   fontWeight={400}
-                  textAlign={"center"}
                   py={"7px"}
-                  px={"10px"}
+                  px={"12px"}
                 >
                   {transact.no}
                 </Td>
@@ -563,7 +548,6 @@ const Transaction = () => {
                   color={"#444A6D"}
                   fontFamily={"Nunito Sans"}
                   fontWeight={400}
-                  textAlign={"center"}
                   py={"10px"}
                   px={"5px"}
                 >
@@ -574,7 +558,6 @@ const Transaction = () => {
                   color={"#444A6D"}
                   fontFamily={"Nunito Sans"}
                   fontWeight={400}
-                  textAlign={"center"}
                   py={"10px"}
                   px={"0px"}
                 >
@@ -585,7 +568,6 @@ const Transaction = () => {
                   color={"#444A6D"}
                   fontFamily={"Nunito Sans"}
                   fontWeight={400}
-                  textAlign={"center"}
                   py={"5px"}
                   px={"10px"}
                 >
@@ -596,7 +578,6 @@ const Transaction = () => {
                   color={"#444A6D"}
                   fontFamily={"Nunito Sans"}
                   fontWeight={400}
-                  textAlign={"center"}
                   py={"5px"}
                   px={"10px"}
                 >
@@ -615,7 +596,6 @@ const Transaction = () => {
                   }
                   fontFamily={"Nunito Sans"}
                   fontWeight={400}
-                  textAlign={"center"}
                   py={"5px"}
                   px={"10px"}
                 >
@@ -626,7 +606,6 @@ const Transaction = () => {
                   color={"#444A6D"}
                   fontFamily={"Nunito Sans"}
                   fontWeight={400}
-                  textAlign={"center"}
                   py={"5px"}
                   px={"10px"}
                 >
@@ -637,7 +616,6 @@ const Transaction = () => {
                   color={"#444A6D"}
                   fontFamily={"Nunito Sans"}
                   fontWeight={400}
-                  textAlign={"center"}
                   py={"5px"}
                   px={"2px"}
                 >
@@ -648,7 +626,6 @@ const Transaction = () => {
                   color={"#444A6D"}
                   fontFamily={"Nunito Sans"}
                   fontWeight={400}
-                  textAlign={"center"}
                   py={"5px"}
                   px={"0px"}
                 >

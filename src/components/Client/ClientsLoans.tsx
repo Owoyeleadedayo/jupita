@@ -77,7 +77,7 @@ const ClientsLoans = () => {
             px={{ md: "12px", base: "3px" }}
             py={{ md: "5px", base: "1px" }}
             variant={"none"}
-            bgColor={"#D46A35"}
+            bgColor={"#2261B0"}
             color={"white"}
             fontFamily={"Nunito Sans"}
             fontSize={{ md: "16px", base: "14px" }}

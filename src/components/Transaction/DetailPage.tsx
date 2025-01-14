@@ -23,6 +23,7 @@ import {
   Th,
   Thead,
   Tr,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { transacts } from "./Transaction";
@@ -32,11 +33,30 @@ import Passport2 from "../../assets/Images/Passport2.png";
 import pdf from "../../assets/Images/pdf.png";
 import icon from "../../assets/Images/hugeicon.png";
 import bidocs from "../../assets/Images/bidocs.png";
+import { GrEdit } from "react-icons/gr";
 import { useState } from "react";
 import DetailsAccordion from "./DetailsAccordion";
 import LoanSummary from "./LoanSummary";
+import DataModal from "./DataModal";
+import PersonalProfileModal from "./PersonalProfileModal";
+import EmploymentProfileModal from "./EmploymentProfileModal";
 
 const DetailPage = () => {
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  
+  const {
+    isOpen: openProfile,
+    onClose: closeProfile,
+    onOpen: onOpenProfile,
+  } = useDisclosure();
+
+  const {
+    isOpen: willOpen,
+    onClose: toClose,
+    onOpen: onOpen3,
+  } = useDisclosure();
+
   const menuItems = [
     {
       name: "Treat Transaction",
@@ -2218,7 +2238,7 @@ const DetailPage = () => {
               <Text
                 fontFamily={"Nunito Sans"}
                 fontSize={"20px"}
-                color={"#D46A35"}
+                color={"#2261B0"}
                 fontWeight={700}
               >
                 ₦{currentTransaction?.loanAmount}
@@ -2238,7 +2258,7 @@ const DetailPage = () => {
               width={"150px"}
               height={"40px"}
               borderRadius={"8px"}
-              bg={"#D46A35"}
+              bg={"#2261B0"}
               fontSize={"14px"}
               fontWeight={600}
               color={"#FFFFFF"}
@@ -2307,18 +2327,19 @@ const DetailPage = () => {
           </Flex>
         </Flex>
 
-        <Grid templateColumns="repeat(12, 1fr)" gap={"10px"}>
-          <GridItem colSpan={{ xl: 6, base: 12 }}>
+        <Grid templateRows="repeat(12, 1fr)" gap={"30px"}>
+          <GridItem rowSpan={6}>
             <Box
-              height={"300px"}
-              bg={"#FFFFFF"}
+              width={"100%"}
+              height={"100%"}
+              bg={"#ECECEC80"}
               borderRadius={"10px"}
               p={"20px"}
-              mb={"10px"}
               boxShadow={"0px 4px 10px rgba(0, 0, 0, 0.1)"}
+              gap={"10px"}
             >
-              <Flex flexDirection={"column"} gap={"20px"}>
-                <Flex justifyContent={"space-between"}>
+              <Flex flexDirection={"column"} gap={"10px"}>
+                <Flex gap={"20px"}>
                   <Text
                     fontFamily={"Nunito Sans"}
                     fontSize={"14px"}
@@ -2327,355 +2348,462 @@ const DetailPage = () => {
                   >
                     Personal Profile
                   </Text>
-                  <Text
-                    fontFamily={"Nunito Sans"}
-                    fontSize={"12px"}
-                    fontWeight={600}
-                    textDecoration={"underline"}
-                    color={"#207EDF"}
-                    cursor={"pointer"}
-                  >
-                    Edit
-                  </Text>
+                  <Flex gap={"22px"}>
+                    <Box pt={"3px"}>
+                      <GrEdit color={"#207EDF"} fontSize={"13px"} />
+                    </Box>
+                    <Button
+                      width={0}
+                      height={0}
+                      pt={"12px"}
+                      variant={"none"}
+                      fontFamily={"Nunito Sans"}
+                      fontSize={"14px"}
+                      fontWeight={600}
+                      color={"#207EDF"}
+                      cursor={"pointer"}
+                      onClick={onOpenProfile}
+                    >
+                      Edit Section
+                    </Button>
+                    <PersonalProfileModal
+                      openProfile={openProfile}
+                      closeProfile={closeProfile}
+                    />
+                  </Flex>
                 </Flex>
+                <Grid templateColumns="repeat(12, 1fr)" gap={"20px"}>
+                  <GridItem colSpan={{ md: 7, xl: 8 }}>
+                    <Flex gap={"5px"}>
+                      <Box width={{ md: "50%", xl: "45%" }} height={"100%"}>
+                        <Flex flexDirection={"column"} gap={"25px"}>
+                          <Flex
+                            gap={{ md: "5px", xl: "7px" }}
+                            flexDirection={{ md: "column", xl: "row" }}
+                          >
+                            <Text
+                              fontFamily={"Nunito Sans"}
+                              fontSize={"14px"}
+                              fontWeight={400}
+                              color={"#737791"}
+                            >
+                              First Name:
+                            </Text>
+                            <Text
+                              fontFamily={"Nunito Sans"}
+                              fontSize={"14px"}
+                              fontWeight={400}
+                              color={"#000000"}
+                            >
+                              {currentTransaction?.name}
+                            </Text>
+                          </Flex>
+                          <Flex
+                            gap={{ md: "5px", xl: "7px" }}
+                            flexDirection={{ md: "column", xl: "row" }}
+                          >
+                            <Text
+                              fontFamily={"Nunito Sans"}
+                              fontSize={"14px"}
+                              fontWeight={400}
+                              color={"#737791"}
+                            >
+                              Phone Number:
+                            </Text>
+                            <Text
+                              fontFamily={"Nunito Sans"}
+                              fontSize={"14px"}
+                              fontWeight={400}
+                              color={"#000000"}
+                            >
+                              {currentTransaction?.phoneNumber}
+                            </Text>
+                          </Flex>
+                          <Flex
+                            gap={{ md: "5px", xl: "7px" }}
+                            flexDirection={{ md: "column", xl: "row" }}
+                          >
+                            <Text
+                              fontFamily={"Nunito Sans"}
+                              fontSize={"14px"}
+                              fontWeight={400}
+                              color={"#737791"}
+                            >
+                              BVN:
+                            </Text>
+                            <Text
+                              fontFamily={"Nunito Sans"}
+                              fontSize={"14px"}
+                              fontWeight={400}
+                              color={"#000000"}
+                            >
+                              223345667788
+                            </Text>
+                          </Flex>
+                          <Flex
+                            gap={{ md: "5px", xl: "7px" }}
+                            flexDirection={{ md: "column", xl: "row" }}
+                          >
+                            <Text
+                              fontFamily={"Nunito Sans"}
+                              fontSize={"14px"}
+                              fontWeight={400}
+                              color={"#737791"}
+                            >
+                              NIN:
+                            </Text>
+                            <Text
+                              fontFamily={"Nunito Sans"}
+                              fontSize={"14px"}
+                              fontWeight={400}
+                              color={"#000000"}
+                            >
+                              12345678901
+                            </Text>
+                          </Flex>
+                        </Flex>
+                      </Box>
+                      <Box width={{ md: "50%", xl: "45%" }} height={"100%"}>
+                        <Flex flexDirection={"column"} gap={"25px"}>
+                          <Flex
+                            gap={{ md: "5px", xl: "7px" }}
+                            flexDirection={{ md: "column", xl: "row" }}
+                          >
+                            <Text
+                              fontFamily={"Nunito Sans"}
+                              fontSize={"14px"}
+                              fontWeight={400}
+                              color={"#737791"}
+                            >
+                              Email:
+                            </Text>
+                            <Text
+                              fontFamily={"Nunito Sans"}
+                              fontSize={"14px"}
+                              fontWeight={400}
+                              color={"#000000"}
+                            >
+                              williams.adeyemi@yahoo.com
+                            </Text>
+                          </Flex>
+                          <Flex
+                            gap={{ md: "5px", xl: "7px" }}
+                            flexDirection={{ md: "column", xl: "row" }}
+                          >
+                            <Text
+                              fontFamily={"Nunito Sans"}
+                              fontSize={"14px"}
+                              fontWeight={400}
+                              color={"#737791"}
+                            >
+                              Date of Birth:
+                            </Text>
+                            <Text
+                              fontFamily={"Nunito Sans"}
+                              fontSize={"14px"}
+                              fontWeight={400}
+                              color={"#000000"}
+                            >
+                              25-Sep-1993
+                            </Text>
+                          </Flex>
+                          <Flex
+                            gap={{ md: "5px", xl: "7px" }}
+                            flexDirection={{ md: "column", xl: "row" }}
+                          >
+                            <Text
+                              fontFamily={"Nunito Sans"}
+                              fontSize={"14px"}
+                              fontWeight={400}
+                              color={"#737791"}
+                            >
+                              Gender:
+                            </Text>
+                            <Text
+                              fontFamily={"Nunito Sans"}
+                              fontSize={"14px"}
+                              fontWeight={400}
+                              color={"#000000"}
+                            >
+                              Male
+                            </Text>
+                          </Flex>
+                          <Flex
+                            gap={{ md: "5px", xl: "7px" }}
+                            flexDirection={{ md: "column", xl: "row" }}
+                          >
+                            <Text
+                              fontFamily={"Nunito Sans"}
+                              fontSize={"14px"}
+                              fontWeight={400}
+                              color={"#737791"}
+                            >
+                              Address:
+                            </Text>
+                            <Text
+                              fontFamily={"Nunito Sans"}
+                              fontSize={"14px"}
+                              fontWeight={400}
+                              color={"#000000"}
+                            >
+                              14, Amazing Grace Street, Oloko Road, IDI IROKO,
+                              SANGO OTA, OGUN STATE
+                            </Text>
+                          </Flex>
+                        </Flex>
+                      </Box>
+                    </Flex>
+                  </GridItem>
+                  <GridItem colSpan={{ md: 4, xl: 4 }}>
+                    <Flex gap={"30px"}>
+                      <Flex flexDirection={"column"}>
+                        <Flex justifyContent={"space-between"}>
+                          <Flex
+                            justifyContent={"center"}
+                            alignItems={"center"}
+                            gap={"10px"}
+                          >
+                            <Text
+                              fontFamily={"Nunito Sans"}
+                              fontSize={"16px"}
+                              fontWeight={700}
+                              color={"#000000"}
+                            >
+                              Biometric KYC:
+                            </Text>
+                            <Button
+                              width={"78px"}
+                              height={"20px"}
+                              bgColor={"#98F4D5"}
+                              textAlign={"center"}
+                              fontFamily={"Nunito Sans"}
+                              fontSize={"10px"}
+                              fontWeight={600}
+                              color={"#000000"}
+                              _hover={{
+                                bgColor: "#000000",
+                                color: "#98F4D5",
+                              }}
+                            >
+                              SUCCESSFUL
+                            </Button>
+                          </Flex>
+                        </Flex>
+                        <Flex
+                          justifyContent={"space-evenly"}
+                          pt={"20px"}
+                          gap={"10px"}
+                        >
+                          <Flex
+                            flexDirection={"column"}
+                            gap={"10px"}
+                            justifyContent={"center"}
+                            alignItems={"center"}
+                          >
+                            <Box width={"127px"} height={"156px"}>
+                              <Image
+                                src={Passport1}
+                                width={"100%"}
+                                height={"100%"}
+                                objectFit={"contain"}
+                              />
+                            </Box>
+                            <Text
+                              fontFamily={"Nunito Sans"}
+                              fontSize={"10px"}
+                              fontWeight={600}
+                              color={"#000000"}
+                              textAlign={"center"}
+                            >
+                              Picture from ID Authority
+                            </Text>
+                          </Flex>
 
-                <Flex gap={"2px"}>
-                  <Box>
-                    <Flex flexDirection={"column"} gap={"20px"}>
-                      <Flex gap={"5px"}>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#737791"}
-                        >
-                          First Name:
-                        </Text>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#000000"}
-                        >
-                          {currentTransaction?.name.split(" ")}
-                        </Text>
-                      </Flex>
-                      <Flex gap={"5px"}>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#737791"}
-                        >
-                          Last Name:
-                        </Text>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#000000"}
-                        >
-                          {currentTransaction?.name.split(" ")}
-                        </Text>
-                      </Flex>
-                      <Flex gap={"5px"}>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#737791"}
-                        >
-                          Other Name:
-                        </Text>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#000000"}
-                        >
-                          {currentTransaction?.name.split(" ")}
-                        </Text>
-                      </Flex>
-                      <Flex gap={"5px"}>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#737791"}
-                        >
-                          Phone Number:
-                        </Text>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#000000"}
-                        >
-                          {currentTransaction?.phoneNumber}
-                        </Text>
-                      </Flex>
-                      <Flex gap={"5px"}>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#737791"}
-                        >
-                          Address:
-                        </Text>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#000000"}
-                        >
-                          14, Amazing Grace Street, Oloko Road, IDI IROKO, SANGO
-                          OTA, OGUN STATE
-                        </Text>
+                          <Flex
+                            flexDirection={"column"}
+                            gap={"10px"}
+                            justifyContent={"center"}
+                            alignItems={"center"}
+                          >
+                            <Box width={"127px"} height={"156px"}>
+                              <Image
+                                src={Passport2}
+                                width={"100%"}
+                                height={"100%"}
+                                objectFit={"contain"}
+                              />
+                            </Box>
+                            <Text
+                              fontFamily={"Nunito Sans"}
+                              fontSize={"10px"}
+                              fontWeight={600}
+                              color={"#000000"}
+                              textAlign={"center"}
+                            >
+                              Incoming Selfie/Passport
+                            </Text>
+                          </Flex>
+                        </Flex>
+                        <Flex pt={"10px"}>
+                          <Button
+                            width={"101px"}
+                            height={"27px"}
+                            bgColor={"#2261B0"}
+                            variant={"none"}
+                            fontFamily={"Nunito Sans"}
+                            fontSize={"10px"}
+                            fontWeight={600}
+                            color={"#FFFFFF"}
+                            onClick={onOpen}
+                          >
+                            Show BVN Data
+                          </Button>
+                          <DataModal isOpen={isOpen} onClose={onClose} />
+                        </Flex>
                       </Flex>
                     </Flex>
-                  </Box>
-                  <Box>
-                    <Flex flexDirection={"column"} gap={"20px"}>
-                      <Flex gap={"5px"}>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#737791"}
-                        >
-                          Email:
-                        </Text>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#000000"}
-                        >
-                          williams.adeyemi@yahoo.com
-                        </Text>
-                      </Flex>
-                      <Flex gap={"5px"}>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#737791"}
-                        >
-                          BVN:
-                        </Text>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#000000"}
-                        >
-                          223345667788
-                        </Text>
-                      </Flex>
-                      <Flex gap={"5px"}>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#737791"}
-                        >
-                          NIN:
-                        </Text>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#000000"}
-                        >
-                          12345678901
-                        </Text>
-                      </Flex>
-                      <Flex gap={"5px"}>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#737791"}
-                        >
-                          Date of Birth:
-                        </Text>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#000000"}
-                        >
-                          25-Sep-1993
-                        </Text>
-                      </Flex>
-                      <Flex gap={"5px"}>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#737791"}
-                        >
-                          Marital Status:
-                        </Text>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#000000"}
-                        >
-                          Married
-                        </Text>
-                      </Flex>
-                      <Flex gap={"5px"}>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#737791"}
-                        >
-                          Number of Dependents:
-                        </Text>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#000000"}
-                        >
-                          3
-                        </Text>
-                      </Flex>
-                    </Flex>
-                  </Box>
-                </Flex>
+                  </GridItem>
+                </Grid>
               </Flex>
             </Box>
-            <Box
-              height={"250px"}
-              bg={"#FFFFFF"}
-              borderRadius={"10px"}
-              p={"20px"}
-              boxShadow={"0px 4px 10px rgba(0, 0, 0, 0.1)"}
-            >
-              <Flex flexDirection={"column"} gap={"20px"}>
-                <Flex justifyContent={"space-between"}>
-                  <Text
-                    fontFamily={"Nunito Sans"}
-                    fontSize={"14px"}
-                    fontWeight={600}
-                    color={"#000000"}
-                  >
-                    Employment Profile
-                  </Text>
-                  <Text
-                    fontFamily={"Nunito Sans"}
-                    fontSize={"12px"}
-                    fontWeight={600}
-                    textDecoration={"underline"}
-                    color={"#207EDF"}
-                    cursor={"pointer"}
-                  >
-                    Edit
-                  </Text>
-                </Flex>
+          </GridItem>
+          <GridItem
+            rowSpan={6}
+            height={"100%"}
+            bg={"#ECECEC80"}
+            borderRadius={"10px"}
+            p={"20px"}
+            boxShadow={"0px 4px 10px rgba(0, 0, 0, 0.1)"}
+          >
+            <Flex gap={"20px"} pb={"20px"}>
+              <Text
+                fontFamily={"Nunito Sans"}
+                fontSize={"14px"}
+                fontWeight={600}
+                color={"#000000"}
+              >
+                Employment Profile
+              </Text>
+              <Flex gap={"22px"}>
+                <Box pt={"3px"}>
+                  <GrEdit color={"#207EDF"} fontSize={"13px"} />
+                </Box>
+                <Button
+                  width={0}
+                  height={0}
+                  pt={"12px"}
+                  variant={"none"}
+                  fontFamily={"Nunito Sans"}
+                  fontSize={"14px"}
+                  fontWeight={600}
+                  color={"#207EDF"}
+                  cursor={"pointer"}
+                  onClick={onOpen3}
+                >
+                  Edit Section
+                </Button>
+                <EmploymentProfileModal willOpen={willOpen} toClose={toClose} />
+              </Flex>
+            </Flex>
+            <Grid templateColumns="repeat(12, 1fr)" gap={"20px"}>
+              <GridItem colSpan={4}>
+                <Box>
+                  <Flex flexDirection={"column"} gap={"20px"}>
+                    <Flex
+                      gap={{ md: "5px", xl: "7px" }}
+                      flexDirection={{ md: "column", xl: "row" }}
+                    >
+                      <Text
+                        fontFamily={"Nunito Sans"}
+                        fontSize={"14px"}
+                        fontWeight={400}
+                        color={"#737791"}
+                      >
+                        Employment Type:
+                      </Text>
+                      <Text
+                        fontFamily={"Nunito Sans"}
+                        fontSize={"14px"}
+                        fontWeight={400}
+                        color={"#000000"}
+                      >
+                        Employed
+                      </Text>
+                    </Flex>
+                    <Flex
+                      gap={{ md: "5px", xl: "7px" }}
+                      flexDirection={{ md: "column", xl: "row" }}
+                    >
+                      <Text
+                        fontFamily={"Nunito Sans"}
+                        fontSize={"14px"}
+                        fontWeight={400}
+                        color={"#737791"}
+                      >
+                        Employer Name:
+                      </Text>
+                      <Text
+                        fontFamily={"Nunito Sans"}
+                        fontSize={"14px"}
+                        fontWeight={400}
+                        color={"#000000"}
+                      >
+                        DLM CAPITAL GROUP
+                      </Text>
+                    </Flex>
+                    <Flex
+                      gap={{ md: "5px", xl: "7px" }}
+                      flexDirection={{ md: "column", xl: "row" }}
+                    >
+                      <Text
+                        fontFamily={"Nunito Sans"}
+                        fontSize={"14px"}
+                        fontWeight={400}
+                        color={"#737791"}
+                      >
+                        Sector:
+                      </Text>
+                      <Text
+                        fontFamily={"Nunito Sans"}
+                        fontSize={"14px"}
+                        fontWeight={400}
+                        color={"#000000"}
+                      >
+                        Financial Institution
+                      </Text>
+                    </Flex>
+                    <Flex
+                      gap={{ md: "5px", xl: "7px" }}
+                      flexDirection={{ md: "column", xl: "row" }}
+                    >
+                      <Text
+                        fontFamily={"Nunito Sans"}
+                        fontSize={"14px"}
+                        fontWeight={400}
+                        color={"#737791"}
+                      >
+                        Net Pay:
+                      </Text>
+                      <Text
+                        fontFamily={"Nunito Sans"}
+                        fontSize={"14px"}
+                        fontWeight={400}
+                        color={"#000000"}
+                      >
+                        525,000.00
+                      </Text>
+                    </Flex>
+                  </Flex>
+                </Box>
+              </GridItem>
+              <GridItem colSpan={8}>
                 <Flex gap={"10px"}>
                   <Box>
                     <Flex flexDirection={"column"} gap={"20px"}>
-                      <Flex gap={"5px"}>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#737791"}
-                        >
-                          Employment Type:
-                        </Text>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#000000"}
-                        >
-                          Employed
-                        </Text>
-                      </Flex>
-                      <Flex gap={"5px"}>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"12px"}
-                          fontWeight={400}
-                          color={"#737791"}
-                        >
-                          Employer Name:
-                        </Text>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"12px"}
-                          fontWeight={400}
-                          color={"#000000"}
-                        >
-                          DLM CAPITAL GROUP
-                        </Text>
-                      </Flex>
-                      <Flex gap={"5px"}>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#737791"}
-                        >
-                          Sector:
-                        </Text>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#000000"}
-                        >
-                          Financial Institution
-                        </Text>
-                      </Flex>
-                      <Flex gap={"5px"}>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#737791"}
-                        >
-                          Net Pay:
-                        </Text>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#000000"}
-                        >
-                          525,000.00
-                        </Text>
-                      </Flex>
-                    </Flex>
-                  </Box>
-                  <Box>
-                    <Flex flexDirection={"column"} gap={"10px"}>
-                      <Flex gap={"5px"}>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"14px"}
-                          fontWeight={400}
-                          color={"#737791"}
-                        >
-                          Employer Address:
-                        </Text>
-                        <Text
-                          fontFamily={"Nunito Sans"}
-                          fontSize={"12px"}
-                          fontWeight={400}
-                          color={"#000000"}
-                        >
-                          14, Amazing Grace Street, Oloko Road
-                        </Text>
-                      </Flex>
-                      <Flex gap={"5px"}>
+                      <Flex
+                        gap={{ md: "5px", xl: "7px" }}
+                        flexDirection={{ md: "column", xl: "row" }}
+                      >
                         <Text
                           fontFamily={"Nunito Sans"}
                           fontSize={"14px"}
@@ -2693,7 +2821,10 @@ const DetailPage = () => {
                           wadeyemi@getjupita.co
                         </Text>
                       </Flex>
-                      <Flex gap={"5px"}>
+                      <Flex
+                        gap={{ md: "5px", xl: "7px" }}
+                        flexDirection={{ md: "column", xl: "row" }}
+                      >
                         <Text
                           fontFamily={"Nunito Sans"}
                           fontSize={"14px"}
@@ -2711,7 +2842,10 @@ const DetailPage = () => {
                           Credit Risk Manager
                         </Text>
                       </Flex>
-                      <Flex gap={"5px"}>
+                      <Flex
+                        gap={{ md: "5px", xl: "7px" }}
+                        flexDirection={{ md: "column", xl: "row" }}
+                      >
                         <Text
                           fontFamily={"Nunito Sans"}
                           fontSize={"14px"}
@@ -2729,197 +2863,35 @@ const DetailPage = () => {
                           23 months
                         </Text>
                       </Flex>
+                      <Flex
+                        gap={{ md: "5px", xl: "7px" }}
+                        flexDirection={{ md: "column", xl: "row" }}
+                      >
+                        <Text
+                          fontFamily={"Nunito Sans"}
+                          fontSize={"14px"}
+                          fontWeight={400}
+                          color={"#737791"}
+                        >
+                          Employer Address:
+                        </Text>
+                        <Box maxW={"250px"}>
+                          <Text
+                            fontFamily={"Nunito Sans"}
+                            fontSize={"14px"}
+                            fontWeight={400}
+                            color={"#000000"}
+                          >
+                            14, Amazing Grace Street, Oloko Road, IDI IROKO,
+                            SANGO OTA, OGUN STATE
+                          </Text>
+                        </Box>
+                      </Flex>
                     </Flex>
                   </Box>
                 </Flex>
-              </Flex>
-            </Box>
-          </GridItem>
-          <GridItem
-            colSpan={{ xl: 6, base: 12 }}
-            height={"100%"}
-            bg={"#FFFFFF"}
-            borderRadius={"10px"}
-            p={"20px"}
-            boxShadow={"0px 4px 10px rgba(0, 0, 0, 0.1)"}
-          >
-            <Flex flexDirection={"column"} gap={"30px"}>
-              <Flex justifyContent={"space-between"}>
-                <Flex
-                  justifyContent={"center"}
-                  alignItems={"center"}
-                  gap={"10px"}
-                >
-                  <Text
-                    fontFamily={"Nunito Sans"}
-                    fontSize={"14px"}
-                    fontWeight={600}
-                    color={"#000000"}
-                  >
-                    Face Match:{" "}
-                  </Text>
-                  <Button
-                    width={"110px"}
-                    height={"30px"}
-                    bgColor={"#98F4D5"}
-                    textAlign={"center"}
-                    fontFamily={"Nunito Sans"}
-                    fontSize={"14px"}
-                    fontWeight={600}
-                    color={"#000000"}
-                    _hover={{
-                      bgColor: "#000000",
-                      color: "#98F4D5",
-                    }}
-                  >
-                    SUCCESSFUL
-                  </Button>
-                </Flex>
-                <Text
-                  fontFamily={"Nunito Sans"}
-                  fontWeight={400}
-                  fontSize={"14px"}
-                >
-                  BVN DATA
-                </Text>
-              </Flex>
-              <Flex justifyContent={"space-evenly"} gap={"20px"}>
-                <Flex flexDirection={"column"} gap={"10px"}>
-                  <Box width={"213.48px"} height={"260.76px"}>
-                    <Image
-                      src={Passport1}
-                      width={"100%"}
-                      height={"100%"}
-                      objectFit={"contain"}
-                    />
-                  </Box>
-                  <Text
-                    fontFamily={"Nunito Sans"}
-                    fontSize={"14px"}
-                    fontWeight={600}
-                    color={"#000000"}
-                    textAlign={"center"}
-                  >
-                    Picture from ID Authority
-                  </Text>
-                </Flex>
-
-                <Flex flexDirection={"column"} gap={"10px"}>
-                  <Box width={"213.48px"} height={"260.76px"}>
-                    <Image
-                      src={Passport2}
-                      width={"100%"}
-                      height={"100%"}
-                      objectFit={"contain"}
-                    />
-                  </Box>
-                  <Text
-                    fontFamily={"Nunito Sans"}
-                    fontSize={"14px"}
-                    fontWeight={600}
-                    color={"#000000"}
-                    textAlign={"center"}
-                  >
-                    Incoming Selfie/Passport
-                  </Text>
-                </Flex>
-              </Flex>
-
-              <Box>
-                <Flex flexDirection={"column"} gap={"10px"}>
-                  <Flex gap={"10px"}>
-                    <Text
-                      fontFamily={"Nunito Sans"}
-                      fontSize={"14px"}
-                      fontWeight={400}
-                      color={"#737791"}
-                    >
-                      First Name:
-                    </Text>
-                    <Text
-                      fontFamily={"Nunito Sans"}
-                      fontSize={"14px"}
-                      fontWeight={400}
-                      color={"#000000"}
-                    >
-                      {currentTransaction?.name.split(" ")}
-                    </Text>
-                  </Flex>
-                  <Flex gap={"10px"}>
-                    <Text
-                      fontFamily={"Nunito Sans"}
-                      fontSize={"14px"}
-                      fontWeight={400}
-                      color={"#737791"}
-                    >
-                      Last Name:
-                    </Text>
-                    <Text
-                      fontFamily={"Nunito Sans"}
-                      fontSize={"14px"}
-                      fontWeight={400}
-                      color={"#000000"}
-                    >
-                      {currentTransaction?.name.split(" ")}
-                    </Text>
-                  </Flex>
-                  <Flex gap={"10px"}>
-                    <Text
-                      fontFamily={"Nunito Sans"}
-                      fontSize={"14px"}
-                      fontWeight={400}
-                      color={"#737791"}
-                    >
-                      Other Name:
-                    </Text>
-                    <Text
-                      fontFamily={"Nunito Sans"}
-                      fontSize={"14px"}
-                      fontWeight={400}
-                      color={"#000000"}
-                    >
-                      {currentTransaction?.name.split(" ")}
-                    </Text>
-                  </Flex>
-                  <Flex gap={"10px"}>
-                    <Text
-                      fontFamily={"Nunito Sans"}
-                      fontSize={"14px"}
-                      fontWeight={400}
-                      color={"#737791"}
-                    >
-                      ID Number:
-                    </Text>
-                    <Text
-                      fontFamily={"Nunito Sans"}
-                      fontSize={"14px"}
-                      fontWeight={400}
-                      color={"#000000"}
-                    >
-                      {currentTransaction?.LoanId}
-                    </Text>
-                  </Flex>
-                  <Flex gap={"10px"}>
-                    <Text
-                      fontFamily={"Nunito Sans"}
-                      fontSize={"14px"}
-                      fontWeight={400}
-                      color={"#737791"}
-                    >
-                      Date of Birth:
-                    </Text>
-                    <Text
-                      fontFamily={"Nunito Sans"}
-                      fontSize={"14px"}
-                      fontWeight={400}
-                      color={"#000000"}
-                    >
-                      09/25/2000
-                    </Text>
-                  </Flex>
-                </Flex>
-              </Box>
-            </Flex>
+              </GridItem>
+            </Grid>
           </GridItem>
         </Grid>
 
@@ -2953,7 +2925,7 @@ const DetailPage = () => {
                 <Button
                   width={"86px"}
                   height={"30px"}
-                  bgColor={"#D46A35"}
+                  bgColor={"#2261B0"}
                   borderRadius={"8px"}
                   fontFamily={"Nunito Sans"}
                   fontSize={"10px"}

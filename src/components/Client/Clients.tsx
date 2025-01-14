@@ -333,7 +333,7 @@ const Clients = () => {
           <Flex gap={{ md: "10px", base: "4px" }} flexDirection={"row-reverse"}>
             <InputGroup bg="#F9FAFB" width={"350px"}>
               <InputLeftElement pointerEvents="none">
-                <BsSearch color="#D46A35" fontSize={"18px"} />
+                <BsSearch color="#2261B0" fontSize={"18px"} />
               </InputLeftElement>
               <Input placeholder="Search here..." />
             </InputGroup>
@@ -343,7 +343,7 @@ const Clients = () => {
               gap={"10px"}
               color={"#737791"}
             >
-              <IoFilterOutline color="#D46A35" fontSize={"18px"} />
+              <IoFilterOutline color="#2261B0" fontSize={"18px"} />
               Filter
             </Button>
           </Flex>
@@ -352,7 +352,7 @@ const Clients = () => {
               px={{ md: "12px", base: "3px" }}
               py={{ md: "5px", base: "1px" }}
               variant={"none"}
-              bgColor={"#D46A35"}
+              bgColor={"#2261B0"}
               color={"white"}
               fontFamily={"Nunito Sans"}
               fontSize={{ md: "16px", base: "14px" }}
@@ -370,13 +370,7 @@ const Clients = () => {
             <Thead>
               <Tr>
                 {" "}
-                <Td
-                  fontSize={"16px"}
-                  color={"#96A5B8"}
-                  textAlign={"center"}
-                  py={"5px"}
-                  px={"10px"}
-                >
+                <Td fontSize={"16px"} color={"#96A5B8"} py={"5px"} px={"10px"}>
                   #
                 </Td>
                 <Td
@@ -384,7 +378,6 @@ const Clients = () => {
                   color={"#000000"}
                   fontFamily={"Nunito Sans"}
                   fontWeight={500}
-                  textAlign={"center"}
                   py={"5px"}
                   px={"10px"}
                 >
@@ -395,9 +388,8 @@ const Clients = () => {
                   color={"#000000"}
                   fontFamily={"Nunito Sans"}
                   fontWeight={500}
-                  textAlign={"center"}
                   py={"5px"}
-                  px={"10px"}
+                  px={"3px"}
                 >
                   Name
                 </Td>
@@ -406,7 +398,6 @@ const Clients = () => {
                   color={"#000000"}
                   fontFamily={"Nunito Sans"}
                   fontWeight={500}
-                  textAlign={"center"}
                   py={"5px"}
                   px={"10px"}
                 >
@@ -417,7 +408,6 @@ const Clients = () => {
                   color={"#000000"}
                   fontFamily={"Nunito Sans"}
                   fontWeight={500}
-                  textAlign={"center"}
                   py={"5px"}
                   px={"10px"}
                 >
@@ -428,7 +418,6 @@ const Clients = () => {
                   color={"#000000"}
                   fontFamily={"Nunito Sans"}
                   fontWeight={500}
-                  textAlign={"center"}
                   py={"5px"}
                   px={"10px"}
                 >
@@ -439,9 +428,8 @@ const Clients = () => {
                   color={"#000000"}
                   fontFamily={"Nunito Sans"}
                   fontWeight={500}
-                  textAlign={"center"}
                   py={"5px"}
-                  px={"10px"}
+                  px={"3px"}
                 >
                   Created At
                 </Td>
@@ -461,7 +449,6 @@ const Clients = () => {
                     color={"#444A6D"}
                     fontFamily={"Nunito Sans"}
                     fontWeight={400}
-                    textAlign={"center"}
                     py={"7px"}
                     px={"10px"}
                   >
@@ -472,7 +459,6 @@ const Clients = () => {
                     color={"#444A6D"}
                     fontFamily={"Nunito Sans"}
                     fontWeight={400}
-                    textAlign={"center"}
                     py={"10px"}
                     px={"5px"}
                   >
@@ -483,7 +469,6 @@ const Clients = () => {
                     color={"#444A6D"}
                     fontFamily={"Nunito Sans"}
                     fontWeight={400}
-                    textAlign={"center"}
                     py={"10px"}
                     px={"0px"}
                   >
@@ -494,7 +479,6 @@ const Clients = () => {
                     color={"#444A6D"}
                     fontFamily={"Nunito Sans"}
                     fontWeight={400}
-                    textAlign={"center"}
                     py={"5px"}
                     px={"10px"}
                   >
@@ -505,7 +489,6 @@ const Clients = () => {
                     color={"#078861"}
                     fontFamily={"Nunito Sans"}
                     fontWeight={400}
-                    textAlign={"center"}
                     py={"5px"}
                     px={"10px"}
                   >
@@ -516,7 +499,6 @@ const Clients = () => {
                     color={"#444A6D"}
                     fontFamily={"Nunito Sans"}
                     fontWeight={400}
-                    textAlign={"center"}
                     py={"5px"}
                     px={"10px"}
                   >
@@ -527,9 +509,8 @@ const Clients = () => {
                     color={"#444A6D"}
                     fontFamily={"Nunito Sans"}
                     fontWeight={400}
-                    textAlign={"center"}
                     py={"5px"}
-                    px={"2px"}
+                    px={"0px"}
                   >
                     {body.createdAt}
                   </Td>

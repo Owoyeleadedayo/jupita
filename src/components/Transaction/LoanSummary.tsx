@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Flex,
   Grid,
@@ -6,10 +7,12 @@ import {
   Input,
   Select,
   Text,
+  Textarea,
   useDisclosure,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import ModalPage from "../ModalPage";
+import RepaymentModal from "./RepaymentModal";
 
 const LoanSummary = () => {
   const [showLoanDecision, setShowLoanDecision] = useState(false);
@@ -39,7 +42,50 @@ const LoanSummary = () => {
     { name: "Debt to Income Ratio", no: "Medium", color: "#207EDF" },
     { name: "Interest Rate (annual)", no: "36%", color: "#000000" },
   ];
+
+  const commentHistory = [
+    {
+      comment: "Customer is Over leveraged, cannot repay the loan",
+      time: "updated at: 9:02 AM Sep 22, 2024",
+    },
+    {
+      comment: "Additional document required - Bank Statement",
+      time: "updated at: 9:02 AM Sep 22, 2024",
+    },
+    {
+      comment: "Additional document required - Bank Statement",
+      time: "updated at: 9:02 AM Sep 22, 2024",
+    },
+    {
+      comment: "Additional document required - Bank Statement",
+      time: "updated at: 9:02 AM Sep 22, 2024",
+    },
+    {
+      comment: "Additional document required - Bank Statement",
+      time: "updated at: 9:02 AM Sep 22, 2024",
+    },
+    {
+      comment: "Additional document required - Bank Statement",
+      time: "updated at: 9:02 AM Sep 22, 2024",
+    },
+    {
+      comment: "Customer is Over leveraged, cannot repay the loan",
+      time: "updated at: 9:02 AM Sep 22, 2024",
+    },
+    {
+      comment: "Additional document required - Bank Statement",
+      time: "updated at: 9:02 AM Sep 22, 2024",
+    },
+  ];
+
+
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const {
+    isOpen: openRepayment,
+    onOpen: onOpenRepayment,
+    onClose: closeRepayment,
+  } = useDisclosure();
+  
   return (
     <>
       {!showLoanDecision && (
@@ -115,13 +161,14 @@ const LoanSummary = () => {
                 <Button
                   width={"300px"}
                   height={"40px"}
-                  bgColor={"#D46A35"}
+                  variant={"none"}
+                  bgColor={"#2261B0"}
                   fontFamily={"Nunito Sans"}
                   fontWeight={700}
                   fontSize={"14px"}
                   color={"#FFFFFF"}
                   _hover={{
-                    bg: "#D46A35",
+                    bg: "#2261B0",
                     color: "#FFFFFF",
                   }}
                   onClick={handleSubmit}
@@ -151,11 +198,11 @@ const LoanSummary = () => {
               Loan Summary
             </Text>
           </Flex>
-          <Grid templateColumns="repeat(2, 1fr)" pt={"15px"} gap={"10px"}>
+          <Grid templateColumns="repeat(3, 1fr)" pt={"15px"} gap={"10px"}>
             <GridItem
-              width={"450px"}
+              width={"320px"}
               gap={"30px"}
-              bgColor={"#FFF4EE"}
+              bgColor={"#D9D9D91A"}
               height={"390px"}
               borderRadius={"8px"}
             >
@@ -165,15 +212,15 @@ const LoanSummary = () => {
                     <Text
                       fontFamily={"Nunito Sans"}
                       fontWeight={400}
-                      fontSize={"15px"}
+                      fontSize={"14px"}
                       color={"#737791"}
                     >
                       {item.name}
                     </Text>
                     <Text
                       fontFamily={"Nunito Sans"}
-                      fontWeight={500}
-                      fontSize={"15px"}
+                      fontWeight={700}
+                      fontSize={"14px"}
                       color={item.color}
                     >
                       {item.no}
@@ -184,8 +231,8 @@ const LoanSummary = () => {
             </GridItem>
             <GridItem
               gap={"30px"}
-              bgColor={"#FFF4EE"}
-              width={"540px"}
+              bgColor={"#D9D9D91A"}
+              width={"400px"}
               height={"390px"}
               borderRadius={"8px"}
             >
@@ -194,7 +241,7 @@ const LoanSummary = () => {
                   <Text
                     fontFamily={"Nunito Sans"}
                     fontWeight={400}
-                    fontSize={"15px"}
+                    fontSize={"14px"}
                     color={"#737791"}
                   >
                     Loan Tenor(Months)
@@ -203,42 +250,46 @@ const LoanSummary = () => {
                     <Select
                       width={"100%"}
                       border={"none"}
-                      bgColor={"#FFF4EE"}
+                      bgColor={"#D9D9D91A"}
+                      fontFamily={"Nunito Sans"}
+                      fontWeight={700}
+                      fontSize={"14px"}
+                      color={"#000000"}
                       _focus={{
                         borderColor: "transparent",
                       }}
                       _hover={{
                         borderColor: "transparent",
                       }}
-                      variant={"#FFF4EE"}
+                      variant={"#D9D9D91A"}
                     >
                       <option
                         value="option1"
-                        style={{ backgroundColor: "#FFF4EE" }}
+                        style={{ backgroundColor: "#D9D9D91A" }}
                       >
                         10 months
                       </option>
                       <option
                         value="option2"
-                        style={{ backgroundColor: "#FFF4EE" }}
+                        style={{ backgroundColor: "#D9D9D91A" }}
                       >
                         9 months
                       </option>
                       <option
                         value="option3"
-                        style={{ backgroundColor: "#FFF4EE" }}
+                        style={{ backgroundColor: "#D9D9D91A" }}
                       >
                         8 months
                       </option>
                       <option
                         value="option4"
-                        style={{ backgroundColor: "#FFF4EE" }}
+                        style={{ backgroundColor: "#D9D9D91A" }}
                       >
                         7 months
                       </option>
                       <option
                         value="option5"
-                        style={{ backgroundColor: "#FFF4EE" }}
+                        style={{ backgroundColor: "#D9D9D91A" }}
                       >
                         6 months
                       </option>
@@ -249,15 +300,15 @@ const LoanSummary = () => {
                   <Text
                     fontFamily={"Nunito Sans"}
                     fontWeight={400}
-                    fontSize={"15px"}
+                    fontSize={"14px"}
                     color={"#737791"}
                   >
                     Maximum Loan Amount
                   </Text>
                   <Text
                     fontFamily={"Nunito Sans"}
-                    fontWeight={500}
-                    fontSize={"15px"}
+                    fontWeight={700}
+                    fontSize={"14px"}
                     color={"#000000"}
                   >
                     1,800,000.00
@@ -267,15 +318,15 @@ const LoanSummary = () => {
                   <Text
                     fontFamily={"Nunito Sans"}
                     fontWeight={400}
-                    fontSize={"15px"}
+                    fontSize={"14px"}
                     color={"#737791"}
                   >
                     Monthly Repayment
                   </Text>
                   <Text
                     fontFamily={"Nunito Sans"}
-                    fontWeight={500}
-                    fontSize={"15px"}
+                    fontWeight={700}
+                    fontSize={"14px"}
                     color={"#000000"}
                   >
                     180,000.00
@@ -285,15 +336,15 @@ const LoanSummary = () => {
                   <Text
                     fontFamily={"Nunito Sans"}
                     fontWeight={400}
-                    fontSize={"15px"}
+                    fontSize={"14px"}
                     color={"#737791"}
                   >
                     Monthly Repayment to Income
                   </Text>
                   <Text
                     fontFamily={"Nunito Sans"}
-                    fontWeight={500}
-                    fontSize={"15px"}
+                    fontWeight={700}
+                    fontSize={"14px"}
                     color={"#000000"}
                   >
                     21%
@@ -303,7 +354,7 @@ const LoanSummary = () => {
                   <Text
                     fontFamily={"Nunito Sans"}
                     fontWeight={400}
-                    fontSize={"15px"}
+                    fontSize={"14px"}
                     color={"#737791"}
                   >
                     Recommended Amount
@@ -316,7 +367,7 @@ const LoanSummary = () => {
                     <Text
                       fontFamily={"Nunito Sans"}
                       fontWeight={500}
-                      fontSize={"15px"}
+                      fontSize={"14px"}
                       textDecoration={"underline"}
                       color={"#207EDF"}
                       cursor={"pointer"}
@@ -327,7 +378,10 @@ const LoanSummary = () => {
                       type="number"
                       width={"142px"}
                       height={"34px"}
-                      bg={"#FFFFFF"}
+                      bg={"#D9D9D91A"}
+                      fontFamily={"Nunito Sans"}
+                      fontWeight={700}
+                      fontSize={"14px"}
                       variant={"none"}
                       _focus={{
                         borderColor: "#FFFFFF",
@@ -339,15 +393,15 @@ const LoanSummary = () => {
                   <Text
                     fontFamily={"Nunito Sans"}
                     fontWeight={400}
-                    fontSize={"15px"}
+                    fontSize={"14px"}
                     color={"#737791"}
                   >
                     Monthly Repayment
                   </Text>
                   <Text
                     fontFamily={"Nunito Sans"}
-                    fontWeight={500}
-                    fontSize={"15px"}
+                    fontWeight={700}
+                    fontSize={"14px"}
                     color={"#000000"}
                   >
                     180,000.00
@@ -367,6 +421,7 @@ const LoanSummary = () => {
                     <Button
                       width={"110px"}
                       height={"30px"}
+                      variant={"none"}
                       fontFamily={"Nunito Sans"}
                       fontWeight={500}
                       fontSize={"15px"}
@@ -382,15 +437,11 @@ const LoanSummary = () => {
               </Flex>
 
               {!hasDecided && (
-                <Flex
-                  pt={"20px"}
-                  gap={"20px"}
-                  justifyContent={"center"}
-                  alignItems={"center"}
-                >
+                <Flex pt={"20px"} px={"20px"} gap={"10px"}>
                   <Button
-                    width={"230px"}
+                    width={"100px"}
                     height={"40px"}
+                    variant={"none"}
                     bgColor={"#FC0C0C"}
                     textAlign={"center"}
                     textColor={"#FFFFFF"}
@@ -402,9 +453,10 @@ const LoanSummary = () => {
                     REJECT
                   </Button>
                   <Button
-                    width={"230px"}
+                    width={"100px"}
                     height={"40px"}
                     bgColor={"#0BB581"}
+                    variant={"none"}
                     textAlign={"center"}
                     textColor={"#FFFFFF"}
                     fontFamily={"Nunito Sans"}
@@ -416,24 +468,128 @@ const LoanSummary = () => {
                   </Button>
                 </Flex>
               )}
-              {hasDecided && (
-                <Flex justifyContent={"center"} alignItems={"center"}>
-                  <Button
-                    width={"117px"}
-                    height={"30px"}
-                    bgColor={"#D46A35"}
-                    textAlign={"center"}
-                    textColor={"#FFFFFF"}
+              {hasDecided && approvalStatus === "Approved" && (
+                <Flex
+                  justifyContent={"center"}
+                  alignItems={"center"}
+                  gap={"10px"}
+                >
+                  <Flex>
+                    <Button
+                      width={"180px"}
+                      height={"28px"}
+                      variant={"none"}
+                      bgColor={"#2261B0"}
+                      textAlign={"center"}
+                      textColor={"#FFFFFF"}
+                      fontFamily={"Nunito Sans"}
+                      fontWeight={700}
+                      fontSize={"12px"}
+                      onClick={onOpenRepayment}
+                    >
+                      ADD REPAYMENT TOOL
+                    </Button>
+                    <RepaymentModal openRepayment={openRepayment} closeRepayment={closeRepayment} />
+                  </Flex>
+                  <Flex justifyContent={"center"} alignItems={"center"}>
+                    <Button
+                      width={"150px"}
+                      height={"28px"}
+                      variant={"none"}
+                      bgColor={"#078861"}
+                      textAlign={"center"}
+                      textColor={"#FFFFFF"}
+                      fontFamily={"Nunito Sans"}
+                      fontWeight={700}
+                      fontSize={"12px"}
+                      onClick={onOpen}
+                    >
+                      CREATE LOAN
+                    </Button>
+                    <ModalPage isOpen={isOpen} onClose={onClose} />
+                  </Flex>
+                </Flex>
+              )}
+            </GridItem>
+            <GridItem>
+              <Flex direction={"column"}>
+                <Flex>
+                  <Text
                     fontFamily={"Nunito Sans"}
                     fontWeight={700}
                     fontSize={"14px"}
-                    onClick={onOpen}
+                    color={"#000000"}
                   >
-                    CREATE LOAN
-                  </Button>
-                  <ModalPage isOpen={isOpen} onClose={onClose} />
+                    Add Comment
+                  </Text>
                 </Flex>
-              )}
+                <Flex direction={"column"} gap={"10px"}>
+                  <Textarea
+                    width={"260px"}
+                    height={"150px"}
+                    fontFamily={"Nunito Sans"}
+                    fontWeight={700}
+                    fontSize={"14px"}
+                    color={"#000000"}
+                  />
+                  <Button
+                    width={"100px"}
+                    height={"30px"}
+                    bgColor={"#2261B0"}
+                    fontFamily={"Nunito Sans"}
+                    fontWeight={700}
+                    fontSize={"14px"}
+                    color={"#FFFFFF"}
+                  >
+                    SAVE
+                  </Button>
+                </Flex>
+                <Box
+                  width={"260px"}
+                  height={"160px"}
+                  bgColor={"#FCFCFC"}
+                  p={"10px"}
+                  mt={"15px"}
+                  overflowY="auto"
+                  sx={{
+                    scrollbarWidth: "thin",
+                    scrollbarColor: "#2261B0 #f1f1f1",
+                  }}
+                >
+                  <Flex direction={"column"} gap={"5px"}>
+                    <Text
+                      fontFamily={"Nunito Sans"}
+                      fontWeight={700}
+                      fontSize={"14px"}
+                      color={"#000000"}
+                    >
+                      Comment History
+                    </Text>
+                    <Flex direction={"column"}>
+                      {commentHistory.map((item, index) => (
+                        <Flex key={index} direction={"column"}>
+                          <Text
+                            fontFamily={"Nunito Sans"}
+                            fontWeight={400}
+                            fontSize={"10px"}
+                            color={"#000000"}
+                          >
+                            {item.comment}
+                          </Text>
+                          <Text
+                            fontFamily={"Nunito Sans"}
+                            fontWeight={400}
+                            fontSize={"7px"}
+                            color={"#000000"}
+                          >
+                            {item.time}
+                          </Text>
+                        </Flex>
+                      ))}
+                    </Flex>
+                  </Flex>
+                </Box>
+              </Flex>
             </GridItem>
           </Grid>
         </Flex>

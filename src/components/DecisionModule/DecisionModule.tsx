@@ -86,11 +86,15 @@ const DecisionModule = () => {
         direction={"column"}
         gap={"30px"}
       >
+
+        
+
+
         <Flex width={"100%"} justifyContent={"space-between"}>
           <Flex gap={{ md: "10px", base: "4px" }} flexDirection={"row-reverse"}>
             <InputGroup bg="#F9FAFB" width={"350px"}>
               <InputLeftElement pointerEvents="none">
-                <BsSearch color="#D46A35" fontSize={"18px"} />
+                <BsSearch color="#2261B0" fontSize={"18px"} />
               </InputLeftElement>
               <Input placeholder="Search here..." />
             </InputGroup>
@@ -100,7 +104,7 @@ const DecisionModule = () => {
               gap={"10px"}
               color={"#737791"}
             >
-              <IoFilterOutline color="#D46A35" fontSize={"18px"} />
+              <IoFilterOutline color="#2261B0" fontSize={"18px"} />
               Filter
             </Button>
           </Flex>
@@ -115,7 +119,7 @@ const DecisionModule = () => {
               color={"white"}
               fontFamily={"Nunito Sans"}
               fontSize={"12px"}
-              onClick={() => (navigate("/create-module"))}
+              onClick={() => navigate("/create-module")}
             >
               CREATE NEW MODULE
             </Button>
@@ -242,7 +246,11 @@ const DecisionModule = () => {
           </Tbody>
         </Table>
 
-        <Flex justifyContent={"space-between"} alignItems={"center"} px={'20px'}>
+        <Flex
+          justifyContent={"space-between"}
+          alignItems={"center"}
+          px={"20px"}
+        >
           <Text
             fontSize={"12px"}
             fontFamily={"Nunito Sans"}
@@ -251,8 +259,7 @@ const DecisionModule = () => {
             onClick={() => handleRowsPerPageChange(0)}
           >
             {indexOfFirstModule + 1}-
-            {Math.min(indexOfLastModule, module.length)} of{" "}
-            {module.length}
+            {Math.min(indexOfLastModule, module.length)} of {module.length}
           </Text>
           <Flex justifyContent={"center"} alignItems={"center"}>
             <Text

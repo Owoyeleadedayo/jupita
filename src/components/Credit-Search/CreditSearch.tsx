@@ -82,13 +82,13 @@ const CreditSearch = () => {
           <Checkbox
             sx={{
               ".chakra-checkbox__control": {
-                borderColor: "#D46A35",
+                borderColor: "#2261B0",
                 _hover: {
-                  borderColor: "#D46A35",
+                  borderColor: "#2261B0",
                 },
                 _checked: {
-                  backgroundColor: "#D46A35",
-                  borderColor: "#D46A35",
+                  backgroundColor: "#2261B0",
+                  borderColor: "#2261B0",
                   _before: {
                     backgroundColor: "#fff",
                   },
@@ -102,15 +102,15 @@ const CreditSearch = () => {
           <Checkbox
             sx={{
               ".chakra-checkbox__control": {
-                borderColor: "#D46A35",
+                borderColor: "#2261B0",
                 _hover: {
-                  borderColor: "#D46A35",
+                  borderColor: "#2261B0",
                 },
                 _checked: {
-                  backgroundColor: "#D46A35",
-                  borderColor: "#D46A35",
+                  backgroundColor: "#2261B0",
+                  borderColor: "#2261B0",
                   _before: {
-                    backgroundColor: "#fff",
+                    backgroundColor: "#2261B0",
                   },
                 },
               },
@@ -121,13 +121,13 @@ const CreditSearch = () => {
           <Checkbox
             sx={{
               ".chakra-checkbox__control": {
-                borderColor: "#D46A35",
+                borderColor: "#2261B0",
                 _hover: {
-                  borderColor: "#D46A35",
+                  borderColor: "#2261B0",
                 },
                 _checked: {
-                  backgroundColor: "#D46A35",
-                  borderColor: "#D46A35",
+                  backgroundColor: "#2261B0",
+                  borderColor: "#2261B0",
                   _before: {
                     backgroundColor: "#fff",
                   },
@@ -142,17 +142,19 @@ const CreditSearch = () => {
 
         <Flex mt={"20px"}>
           <Button
-            bgColor={"#D46A35"}
+            bgColor={"#2261B0"}
             width={"560px"}
             height={"50px"}
             borderRadius={"10px"}
             color={"#FFFFFF"}
             _hover={{
               backgroundColor: "#FFFFFF",
-              color: "#D46A35",
-              border: "1px solid #D46A35",
+              color: "#2261B0",
+              border: "1px solid #2261B0",
             }}
-            onClick={() => {navigate("/creditSearchResult")}}
+            onClick={() => {
+              navigate("/creditSearchResult");
+            }}
           >
             CHECK CREDIT REPORT
           </Button>
