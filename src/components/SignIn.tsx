@@ -35,12 +35,12 @@ const SignIn = () => {
         localStorage.setItem("token", data.token);
         window.location.href = "/dashboard";
       },
-      onError: (error) => {
-        console.error(
-          "Login failed:",
-          error
-        );
-      },
+      // onError: (error) => {
+      //   console.error(
+      //     "Login failed:",
+      //     error
+      //   );
+      // },
     });
   };
 
