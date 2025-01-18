@@ -54,7 +54,7 @@ const RolesModal = ({ isOpenRoles, onCloseRoles }: RolesPage) => {
                       <Flex
                         width={"300px"}
                         height={"50px"}
-                        bgColor={status === item.status ? "#2261B0" : "#FFFFFF"}
+                        bgColor={status === item.status ? "#FC0C0C" : "#FFFFFF"}
                         fontFamily={"Nunito Sans"}
                         fontWeight={600}
                         fontSize={"14px"}
@@ -64,7 +64,7 @@ const RolesModal = ({ isOpenRoles, onCloseRoles }: RolesPage) => {
                         pl={"100px"}
                         borderRadius={0}
                         _hover={{
-                          bgColor: "#2261B0",
+                          bgColor: "#FC0C0C",
                           color: "#FFFFFF",
                         }}
                       >

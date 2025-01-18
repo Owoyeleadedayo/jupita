@@ -35,7 +35,11 @@ const VerifyOTP = () => {
         bgColor={"#FFFFFF"}
         direction={"column"}
       >
-        <Flex height={'98vh'} justifyContent={'space-between'} direction={'column'}>
+        <Flex
+          height={"98vh"}
+          justifyContent={"space-between"}
+          direction={"column"}
+        >
           <Flex width={"400px"} direction={"column"} gap={"30px"}>
             <Flex direction={"column"}>
               <Flex
@@ -50,7 +54,7 @@ const VerifyOTP = () => {
                   }}
                   cursor={"pointer"}
                 >
-                  <IoMdArrowRoundBack fontSize={"22px"} color="#2261B0" />
+                  <IoMdArrowRoundBack fontSize={"22px"} color="#FC0C0C" />
                 </Flex>
                 <Flex>
                   <Text
@@ -109,7 +113,7 @@ const VerifyOTP = () => {
                 <Button
                   width={"100%"}
                   height={"48px"}
-                  bgColor={"#2261B0"}
+                  bgColor={"#FC0C0C"}
                   variant={"none"}
                   fontFamily={"Nunito Sans"}
                   fontSize={"16px"}
@@ -124,7 +128,7 @@ const VerifyOTP = () => {
               </Flex>
             </Flex>
           </Flex>
-          <Flex pl={'80px'} gap={"5px"}>
+          <Flex pl={"80px"} gap={"5px"}>
             <Text
               fontFamily={"Nunito Sans"}
               fontWeight={400}

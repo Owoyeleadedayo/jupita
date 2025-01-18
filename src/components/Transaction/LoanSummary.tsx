@@ -38,8 +38,8 @@ const LoanSummary = () => {
     { name: "Custom Field 1", no: "N/A", color: "#000000" },
     { name: "Custom Field 2", no: "N/A", color: "#000000" },
     { name: "Debt to Income Ratio", no: "28%", color: "#000000" },
-    { name: "Debt to Income Ratio", no: "702", color: "#078861" },
-    { name: "Debt to Income Ratio", no: "Medium", color: "#207EDF" },
+    { name: "Cumulative Credit Score", no: "702", color: "#078861" },
+    { name: "Risk Level", no: "Medium", color: "#FC0C0C" },
     { name: "Interest Rate (annual)", no: "36%", color: "#000000" },
   ];
 
@@ -162,13 +162,13 @@ const LoanSummary = () => {
                   width={"300px"}
                   height={"40px"}
                   variant={"none"}
-                  bgColor={"#2261B0"}
+                  bgColor={"#FC0C0C"}
                   fontFamily={"Nunito Sans"}
                   fontWeight={700}
                   fontSize={"14px"}
                   color={"#FFFFFF"}
                   _hover={{
-                    bg: "#2261B0",
+                    bg: "#FC0C0C",
                     color: "#FFFFFF",
                   }}
                   onClick={handleSubmit}
@@ -261,7 +261,7 @@ const LoanSummary = () => {
                       _hover={{
                         borderColor: "transparent",
                       }}
-                      variant={"#D9D9D91A"}
+                      variant={"#FC0C0C"}
                     >
                       <option
                         value="option1"
@@ -369,8 +369,11 @@ const LoanSummary = () => {
                       fontWeight={500}
                       fontSize={"14px"}
                       textDecoration={"underline"}
-                      color={"#207EDF"}
+                      color={"#FFFFFF"}
                       cursor={"pointer"}
+                      bg={"#FC0C0C"}
+                      p={"2px 8px"}
+                      borderRadius={"4px"}
                     >
                       Edit
                     </Text>
@@ -479,7 +482,7 @@ const LoanSummary = () => {
                       width={"180px"}
                       height={"28px"}
                       variant={"none"}
-                      bgColor={"#2261B0"}
+                      bgColor={"#FC0C0C"}
                       textAlign={"center"}
                       textColor={"#FFFFFF"}
                       fontFamily={"Nunito Sans"}
@@ -489,7 +492,10 @@ const LoanSummary = () => {
                     >
                       ADD REPAYMENT TOOL
                     </Button>
-                    <RepaymentModal openRepayment={openRepayment} closeRepayment={closeRepayment} />
+                    <RepaymentModal
+                      openRepayment={openRepayment}
+                      closeRepayment={closeRepayment}
+                    />
                   </Flex>
                   <Flex justifyContent={"center"} alignItems={"center"}>
                     <Button
@@ -531,15 +537,17 @@ const LoanSummary = () => {
                     fontWeight={700}
                     fontSize={"14px"}
                     color={"#000000"}
+                    borderColor={"#FC0C0C"}
                   />
                   <Button
                     width={"100px"}
                     height={"30px"}
-                    bgColor={"#2261B0"}
+                    bgColor={"#FC0C0C"}
                     fontFamily={"Nunito Sans"}
                     fontWeight={700}
                     fontSize={"14px"}
                     color={"#FFFFFF"}
+                    variant={"none"}
                   >
                     SAVE
                   </Button>
@@ -553,7 +561,7 @@ const LoanSummary = () => {
                   overflowY="auto"
                   sx={{
                     scrollbarWidth: "thin",
-                    scrollbarColor: "#2261B0 #f1f1f1",
+                    scrollbarColor: "#FC0C0C #f1f1f1",
                   }}
                 >
                   <Flex direction={"column"} gap={"5px"}>

@@ -11,7 +11,6 @@ import Logo from "../assets/Images/jupita2.png";
 import DT from "../assets/Images/signin.png";
 import { useState } from "react";
 import { useLogin } from "../api/user.query";
-// import { useNavigate } from "react-router-dom";
 import { handleInputChange } from "./helper";
 
 const SignIn = () => {
@@ -33,8 +32,8 @@ const SignIn = () => {
     login(formData, {
       onSuccess: (data) => {
         console.log("Login successful:", data);
-        // localStorage.setItem("token", data.token);
-        // window.location.href = "/dashboard";
+        localStorage.setItem("token", data.token);
+        window.location.href = "/dashboard";
       },
       onError: (error) => {
         console.error(

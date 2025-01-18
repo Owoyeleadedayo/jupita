@@ -36,7 +36,7 @@ const CreditSearchResult = () => {
           Image: FC2,
           name: "CRC Credit Bureau",
           dropDown: RB2,
-          buttonColor: "#D46A35",
+          buttonColor: "#FC0C0C",
           buttonTextColor: "#FFFFFF",
           buttonText: "RUN CHECK",
         },
@@ -44,7 +44,7 @@ const CreditSearchResult = () => {
           Image: FC3,
           name: "Credit Registry Credit Bureau",
           dropDown: RB3,
-          buttonColor: "#D46A35",
+          buttonColor: "#FC0C0C",
           buttonTextColor: "#FFFFFF",
           buttonText: "RUN CHECK",
         },
@@ -60,7 +60,7 @@ const CreditSearchResult = () => {
             justifyContent={"center"}
             alignItems={"center"}
             borderRadius={"50%"}
-            color={"#D46A35"}
+            color={"#FC0C0C"}
             cursor={"pointer"}
             onClick={() => {
               navigate(-1);

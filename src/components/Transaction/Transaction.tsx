@@ -402,7 +402,7 @@ const Transaction = () => {
         <Flex gap={{ md: "10px", base: "4px" }}>
           <InputGroup bg="#F9FAFB" width={{ md: "350px", lg: "150px" }}>
             <InputLeftElement pointerEvents="none">
-              <BsSearch color="#2261B0" fontSize={"18px"} />
+              <BsSearch color="#FC0C0C" fontSize={"18px"} />
             </InputLeftElement>
             <Input placeholder="Search here..." />
           </InputGroup>
@@ -412,7 +412,7 @@ const Transaction = () => {
             gap={"10px"}
             color={"#737791"}
           >
-            <IoFilterOutline color="#2261B0" fontSize={"18px"} />
+            <IoFilterOutline color="#FC0C0C" fontSize={"18px"} />
             Filter
           </Button>
         </Flex>
@@ -421,7 +421,7 @@ const Transaction = () => {
             px={{ md: "12px", base: "3px" }}
             py={{ md: "5px", base: "1px" }}
             variant={"none"}
-            bgColor={"#2261B0"}
+            bgColor={"#FC0C0C"}
             color={"white"}
             fontFamily={"Nunito Sans"}
             fontSize={{ md: "16px", base: "14px" }}

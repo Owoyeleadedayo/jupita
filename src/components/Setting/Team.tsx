@@ -36,7 +36,7 @@ const Team = () => {
               color={"#737791"}
               border={"1px solid #0000000F"}
             >
-              <Flex color={"#D46A35"} fontSize={"20px"}>
+              <Flex color={"#FC0C0C"} fontSize={"20px"}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1em"
@@ -60,7 +60,7 @@ const Team = () => {
               border={"1px solid #0000000F"}
             >
               <InputLeftElement pointerEvents="none" pb={"8px"}>
-                <BsSearch color="#D46A35" fontSize={"18px"} />
+                <BsSearch color="#FC0C0C" fontSize={"18px"} />
               </InputLeftElement>
               <Input
                 bg="#FFFFFF"
@@ -102,7 +102,7 @@ const Team = () => {
                 height={"30px"}
                 px={"80px"}
                 variant={"none"}
-                bgColor={"#2261B0"}
+                bgColor={"#FC0C0C"}
                 color={"white"}
                 fontFamily={"Nunito Sans"}
                 fontSize={"12px"}

@@ -98,7 +98,7 @@ const SettingModal = ({ isOpen, onClose,}: IModal) => {
                 <Button
                   width={"175px"}
                   height={"30px"}
-                  bgColor={"#2261B0"}
+                  bgColor={"#FC0C0C"}
                   color={"#FFFFFF"}
                   fontFamily={"Nunito Sans"}
                   fontWeight={700}

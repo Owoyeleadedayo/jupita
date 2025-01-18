@@ -34,7 +34,7 @@ const CreateModule = () => {
               justifyContent={"center"}
               alignItems={"center"}
               borderRadius={"50%"}
-              color={"#2261B0"}
+              color={"#FC0C0C"}
               cursor={"pointer"}
               onClick={() => {
                 navigate(-1);
@@ -417,7 +417,7 @@ const CreateModule = () => {
           </Flex>
 
           <Flex>
-            <Button variant={"none"} bgColor={"#2261B0"} color={'white'}>
+            <Button variant={"none"} bgColor={"#FC0C0C"} color={"white"}>
               Save
             </Button>
           </Flex>

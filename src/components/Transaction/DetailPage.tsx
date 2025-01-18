@@ -2238,7 +2238,7 @@ const DetailPage = () => {
               <Text
                 fontFamily={"Nunito Sans"}
                 fontSize={"20px"}
-                color={"#2261B0"}
+                color={"#FC0C0C"}
                 fontWeight={700}
               >
                 ₦{currentTransaction?.loanAmount}
@@ -2258,7 +2258,7 @@ const DetailPage = () => {
               width={"150px"}
               height={"40px"}
               borderRadius={"8px"}
-              bg={"#2261B0"}
+              bg={"#FC0C0C"}
               fontSize={"14px"}
               fontWeight={600}
               color={"#FFFFFF"}
@@ -2350,7 +2350,7 @@ const DetailPage = () => {
                   </Text>
                   <Flex gap={"22px"}>
                     <Box pt={"3px"}>
-                      <GrEdit color={"#207EDF"} fontSize={"13px"} />
+                      <GrEdit color={"#FC0C0C"} fontSize={"13px"} />
                     </Box>
                     <Button
                       width={0}
@@ -2360,7 +2360,7 @@ const DetailPage = () => {
                       fontFamily={"Nunito Sans"}
                       fontSize={"14px"}
                       fontWeight={600}
-                      color={"#207EDF"}
+                      color={"#FC0C0C"}
                       cursor={"pointer"}
                       onClick={onOpenProfile}
                     >
@@ -2648,7 +2648,7 @@ const DetailPage = () => {
                           <Button
                             width={"101px"}
                             height={"27px"}
-                            bgColor={"#2261B0"}
+                            bgColor={"#FC0C0C"}
                             variant={"none"}
                             fontFamily={"Nunito Sans"}
                             fontSize={"10px"}
@@ -2686,7 +2686,7 @@ const DetailPage = () => {
               </Text>
               <Flex gap={"22px"}>
                 <Box pt={"3px"}>
-                  <GrEdit color={"#207EDF"} fontSize={"13px"} />
+                  <GrEdit color={"#FC0C0C"} fontSize={"13px"} />
                 </Box>
                 <Button
                   width={0}
@@ -2696,7 +2696,7 @@ const DetailPage = () => {
                   fontFamily={"Nunito Sans"}
                   fontSize={"14px"}
                   fontWeight={600}
-                  color={"#207EDF"}
+                  color={"#FC0C0C"}
                   cursor={"pointer"}
                   onClick={onOpen3}
                 >
@@ -2916,7 +2916,7 @@ const DetailPage = () => {
           <TabIndicator
             mt="-1.5px"
             height="2px"
-            bg="#D46A35"
+            bg="#FC0C0C"
             borderRadius="1px"
           />
           <TabPanels>
@@ -2925,7 +2925,7 @@ const DetailPage = () => {
                 <Button
                   width={"86px"}
                   height={"30px"}
-                  bgColor={"#2261B0"}
+                  bgColor={"#FC0C0C"}
                   borderRadius={"8px"}
                   fontFamily={"Nunito Sans"}
                   fontSize={"10px"}

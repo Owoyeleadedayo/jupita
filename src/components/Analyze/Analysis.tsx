@@ -31,17 +31,17 @@ const Analysis = () => {
     {
       title: "Average Monthly Balance",
       amount: "89,000.00",
-      color: "#207EDF",
+      color: "#FC0C0C",
     },
     {
       title: "Average Daily Balance",
       amount: "79,000.00",
-      color: "#207EDF",
+      color: "#FC0C0C",
     },
     {
       title: "Transaction Count",
       amount: "892",
-      color: "#D46A35",
+      color: "#FC0C0C",
     },
   ];
   return (
@@ -63,7 +63,7 @@ const Analysis = () => {
               justifyContent={"center"}
               alignItems={"center"}
               borderRadius={"50%"}
-              color={"#D46A35"}
+              color={"#FC0C0C"}
               cursor={"pointer"}
               onClick={() => {
                 navigate(-1);
@@ -83,7 +83,7 @@ const Analysis = () => {
 
           <Flex justifyContent={"center"} alignItems={"center"} gap={"8px"}>
             <Flex
-              bgColor={"#2261B0"}
+              bgColor={"#FC0C0C"}
               width={"30px"}
               height={"30px"}
               justifyContent={"center"}
@@ -97,7 +97,7 @@ const Analysis = () => {
 
             <Flex>
               <Flex
-                bgColor={"#2261B0"}
+                bgColor={"#FC0C0C"}
                 width={"100%"}
                 height={"100%"}
                 px={"14px"}
@@ -134,7 +134,7 @@ const Analysis = () => {
             fontFamily={"Nunito Sans"}
             fontWeight={700}
             fontSize={"16px"}
-            color={"#D46A35"}
+            color={"#FC0C0C"}
           >
             {currentTablebody?.name}
           </Text>

@@ -59,7 +59,7 @@ const BankLinking = () => {
                 }}
                 cursor={"pointer"}
               >
-                <IoMdArrowRoundBack fontSize={"22px"} color="#2261B0" />
+                <IoMdArrowRoundBack fontSize={"22px"} color="#FC0C0C" />
               </Flex>
               <Flex>
                 <Text
@@ -73,9 +73,9 @@ const BankLinking = () => {
               </Flex>
             </Flex>
             <Divider
-              color={"#2261B0"}
+              color={"#FC0C0C"}
               width={"100px"}
-              border={"1px solid #2261B0"}
+              border={"1px solid #FC0C0C"}
             />
           </Flex>
           <Flex
@@ -138,7 +138,7 @@ const BankLinking = () => {
                   <Button
                     width={"200px"}
                     height={"48px"}
-                    bgColor={"#2261B0"}
+                    bgColor={"#FC0C0C"}
                     variant={"none"}
                     fontFamily={"Nunito Sans"}
                     fontSize={"16px"}
@@ -181,7 +181,7 @@ const BankLinking = () => {
                   <Button
                     width={"200px"}
                     height={"48px"}
-                    bgColor={"#2261B0"}
+                    bgColor={"#FC0C0C"}
                     variant={"none"}
                     fontFamily={"Nunito Sans"}
                     fontSize={"16px"}
@@ -253,7 +253,7 @@ const BankLinking = () => {
                           fontWeight: 600,
                           cursor: "pointer",
                           padding: "10px",
-                          color: "#2261B0",
+                          color: "#FC0C0C",
                         }}
                       >
                         Upload pdf
@@ -286,7 +286,7 @@ const BankLinking = () => {
                             fontFamily={"Nunito Sans"}
                             fontSize={"15px"}
                             color={"#2261B0"}
-                            variant={'none'}
+                            variant={"none"}
                             onClick={handleSubmit}
                           >
                             ok
@@ -321,7 +321,7 @@ const BankLinking = () => {
               <Button
                 width={"100%"}
                 height={"48px"}
-                bgColor={"#2261B0"}
+                bgColor={"#FC0C0C"}
                 variant={"none"}
                 fontFamily={"Nunito Sans"}
                 fontSize={"16px"}

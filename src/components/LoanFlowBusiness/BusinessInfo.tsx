@@ -41,7 +41,7 @@ const BusinessInfo = () => {
                 }}
                 cursor={"pointer"}
               >
-                <IoMdArrowRoundBack fontSize={"22px"} color="#2261B0" />
+                <IoMdArrowRoundBack fontSize={"22px"} color="#FC0C0C" />
               </Flex>
               <Flex>
                 <Text
@@ -55,9 +55,9 @@ const BusinessInfo = () => {
               </Flex>
             </Flex>
             <Divider
-              color={"#2261B0"}
+              color={"#FC0C0C"}
               width={"100px"}
-              border={"1px solid #2261B0"}
+              border={"1px solid #FC0C0C"}
             />
           </Flex>
           <Flex
@@ -387,7 +387,7 @@ const BusinessInfo = () => {
               <Button
                 width={"100%"}
                 height={"48px"}
-                bgColor={"#2261B0"}
+                bgColor={"#FC0C0C"}
                 variant={"none"}
                 fontFamily={"Nunito Sans"}
                 fontSize={"16px"}

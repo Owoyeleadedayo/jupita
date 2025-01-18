@@ -339,13 +339,13 @@ const NavItem = ({
         borderRadius={"10px"}
         role="group"
         cursor="pointer"
-        bg={activePage === name ? "#2261B0" : "transparent"}
+        bg={activePage === name ? "#FC0C0C" : "transparent"}
         color={activePage === name ? "white" : "#737791"}
         fontFamily={"Nunito Sans"}
         fontSize={"18px"}
         lineHeight={"27px"}
         _hover={{
-          bg: "#2261B0",
+          bg: "#FC0C0C",
           color: "white",
         }}
         onClick={() => {

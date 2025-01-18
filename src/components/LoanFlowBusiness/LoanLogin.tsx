@@ -64,8 +64,8 @@ const LoanLogin = () => {
               <Button
                 width={"400px"}
                 height={"50px"}
-                variant={'none'}
-                bgColor={"#2261B0"}
+                variant={"none"}
+                bgColor={"#FC0C0C"}
                 fontFamily={"Nunito Sans"}
                 fontWeight={700}
                 fontSize={"20px"}

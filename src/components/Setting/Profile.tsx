@@ -100,7 +100,7 @@ const Profile = () => {
 
           <Flex justifyContent={"center"} alignItems={"center"}>
             <Button
-              bgColor="#2261B0"
+              bgColor="#FC0C0C"
               width={"500px"}
               height={"40px"}
               color={"#FFFFFF"}
@@ -175,7 +175,7 @@ const Profile = () => {
 
           <Flex justifyContent={"center"} alignItems={"center"}>
             <Button
-              bgColor="#2261B0"
+              bgColor="#FC0C0C"
               width={"500px"}
               height={"40px"}
               color={"#FFFFFF"}

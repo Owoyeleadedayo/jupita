@@ -165,12 +165,12 @@ const LoanInfo = () => {
                 </FormControl>
               </Flex>
             </Flex>
-            <Flex pt={"40px"} pb={'20px'}>
+            <Flex pt={"40px"} pb={"20px"}>
               <Button
                 width={"400px"}
                 height={"50px"}
                 variant={"none"}
-                bgColor={"#2261B0"}
+                bgColor={"#FC0C0C"}
                 fontFamily={"Nunito Sans"}
                 fontWeight={600}
                 fontSize={"16px"}

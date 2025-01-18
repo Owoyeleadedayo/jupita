@@ -2169,7 +2169,7 @@ const Analyze = () => {
           <Flex gap={{ md: "10px", base: "4px" }} flexDirection={"row-reverse"}>
             <InputGroup bg="#F9FAFB" width={"350px"}>
               <InputLeftElement pointerEvents="none">
-                <BsSearch color="#2261B0" fontSize={"18px"} />
+                <BsSearch color="#FC0C0C" fontSize={"18px"} />
               </InputLeftElement>
               <Input placeholder="Search here..." />
             </InputGroup>
@@ -2179,7 +2179,7 @@ const Analyze = () => {
               gap={"10px"}
               color={"#737791"}
             >
-              <IoFilterOutline color="#2261B0" fontSize={"18px"} />
+              <IoFilterOutline color="#FC0C0C" fontSize={"18px"} />
               Filter
             </Button>
           </Flex>
@@ -2190,7 +2190,7 @@ const Analyze = () => {
               px={"12px"}
               py={"10px"}
               variant={"none"}
-              bgColor={"#2261B0"}
+              bgColor={"#FC0C0C"}
               color={"white"}
               fontFamily={"Nunito Sans"}
               fontSize={"13px"}

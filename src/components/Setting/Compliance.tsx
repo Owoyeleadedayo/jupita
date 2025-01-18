@@ -102,7 +102,7 @@ const Compliance = () => {
 
           <Flex>
             <Button
-              bgColor="#2261B0"
+              bgColor="#FC0C0C"
               width={"90px"}
               height={"40px"}
               color={"#FFFFFF"}
@@ -166,7 +166,7 @@ const Compliance = () => {
                   fontFamily={"Nunito Sans"}
                   fontWeight={400}
                   fontSize={"16px"}
-                  color={"#207EDF"}
+                  color={"#FC0C0C"}
                   textDecoration={"underline"}
                 >
                   CAC File.pdf
@@ -205,7 +205,7 @@ const Compliance = () => {
                   fontFamily={"Nunito Sans"}
                   fontWeight={400}
                   fontSize={"16px"}
-                  color={"#207EDF"}
+                  color={"#FC0C0C"}
                   textDecoration={"underline"}
                 >
                   utility billt.docx
@@ -216,7 +216,7 @@ const Compliance = () => {
 
           <Flex>
             <Button
-              bgColor="#2261B0"
+              bgColor="#FC0C0C"
               width={"90px"}
               height={"40px"}
               color={"#FFFFFF"}

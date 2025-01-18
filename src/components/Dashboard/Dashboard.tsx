@@ -87,7 +87,7 @@ const Dashboard = () => {
           <Button
             width={{ md: "227px", base: "120px" }}
             height={{ md: "40px", base: "30px" }}
-            bgColor={"#2261B0"}
+            bgColor={"#FC0C0C"}
             textAlign={"center"}
             fontSize={{ md: "14px", xl: "14px" }}
             lineHeight={"20px"}

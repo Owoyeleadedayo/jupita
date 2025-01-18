@@ -355,14 +355,14 @@ const Director = () => {
               <Button
                 width={"100%"}
                 height={"48px"}
-                bgColor={"#2261B0"}
+                bgColor={"#FC0C0C"}
                 variant={"none"}
                 fontFamily={"Nunito Sans"}
                 fontSize={"16px"}
                 color={"#FFFFFF"}
                 fontWeight={700}
                 onClick={() => {
-                    navigate("/verify-otp");
+                  navigate("/verify-otp");
                 }}
               >
                 Continue

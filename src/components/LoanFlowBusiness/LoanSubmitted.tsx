@@ -84,7 +84,7 @@ const LoanSubmitted = () => {
               <Button
                 width={"100%"}
                 height={"48px"}
-                bgColor={"#2261B0"}
+                bgColor={"#FC0C0C"}
                 variant={"none"}
                 fontFamily={"Nunito Sans"}
                 fontSize={"16px"}
