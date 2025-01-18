@@ -20,24 +20,24 @@ import {
   MenuList,
   Image,
 } from "@chakra-ui/react";
-import {
-  FiMenu,
-  FiBell,
-  FiChevronDown,
-} from "react-icons/fi";
+import { FiMenu, FiBell, FiChevronDown } from "react-icons/fi";
 import Logo from "../assets/Images/jupita.png";
-import Dashboard from "./Dashboard";
-import { ReactNode } from "react";
+import { ReactNode,  useState } from "react";
+import {  useNavigate } from "react-router-dom";
 
-// Change icon type to accept both IconType and ReactNode
 interface LinkItemProps {
   name: string;
   icon: ReactNode;
+  path?: string;
 }
 
 interface NavItemProps extends FlexProps {
   icon: ReactNode;
   children: React.ReactNode;
+  name: string;
+  activePage: string;
+  setActivePage: React.Dispatch<React.SetStateAction<string>>;
+  path?: string;
 }
 
 interface MobileProps extends FlexProps {
@@ -64,6 +64,7 @@ const LinkItems: Array<LinkItemProps> = [
         />
       </svg>
     ),
+    path: "/dashboard",
   },
   {
     name: "Transaction",
@@ -80,6 +81,7 @@ const LinkItems: Array<LinkItemProps> = [
         />
       </svg>
     ),
+    path: "/transaction",
   },
   {
     name: "Clients",
@@ -114,6 +116,7 @@ const LinkItems: Array<LinkItemProps> = [
         <path fill="none" d="M0 0h36v36H0z" />
       </svg>
     ),
+    path: "/clients",
   },
   {
     name: "Credit Search",
@@ -130,6 +133,7 @@ const LinkItems: Array<LinkItemProps> = [
         ></path>
       </svg>
     ),
+    path: "/credit-search",
   },
 
   {
@@ -150,8 +154,8 @@ const LinkItems: Array<LinkItemProps> = [
         ></path>
       </svg>
     ),
+    path: "/analyze",
   },
-
   {
     name: "Decision Module",
     icon: (
@@ -167,8 +171,8 @@ const LinkItems: Array<LinkItemProps> = [
         ></path>
       </svg>
     ),
+    path: "/decision-module",
   },
-
   {
     name: "Reporting",
     icon: (
@@ -184,6 +188,7 @@ const LinkItems: Array<LinkItemProps> = [
         ></path>
       </svg>
     ),
+    path: "/reporting",
   },
   {
     name: "Logs",
@@ -206,6 +211,7 @@ const LinkItems: Array<LinkItemProps> = [
         </g>
       </svg>
     ),
+    path: "/logs",
   },
   {
     name: "Settings",
@@ -222,6 +228,7 @@ const LinkItems: Array<LinkItemProps> = [
         />
       </svg>
     ),
+    path: "/setting",
   },
   {
     name: "Sign Out",
@@ -238,13 +245,30 @@ const LinkItems: Array<LinkItemProps> = [
         />
       </svg>
     ),
+    path: "/sign-out",
   },
 ];
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
+  const [activePage, setActivePage] = useState("/");
+
+  // const location = useLocation()
+
+  // useEffect(() => {
+  //   if (location.pathname === "/") {
+  //     setActivePage("Dashboard");
+  //   } else {
+  //     const page = LinkItems.find((item) => {
+  //       return location.pathname === item.path;
+  //     });
+  //     setActivePage(page!.name);
+  //   }
+  // }, [location.pathname]);
+  
+
   return (
     <Box
-      transition="3s ease"
+      transition="all 3s ease-in-out"
       bg={"white"}
       borderRight="1px"
       borderRightColor={"#f1f2f3"}
@@ -252,27 +276,34 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       pos="fixed"
       h="full"
       maxH={"100vh"}
-      overflowY={"auto"} 
+      overflowY={"auto"}
+      sx={{
+        "&::-webkit-scrollbar": {
+          display: "none",
+        },
+      }}
+      display={{ base: "block", md: "block", lg: "none" }}
       {...rest}
     >
       <Flex alignItems="center" mx="4" justifyContent="space-between" my={6}>
         <Flex justifyContent={"center"} alignItems={"center"} mx={"auto"}>
           <Image src={Logo} alt={"Logo"} width={"80px"} height={"30px"} />
         </Flex>
-        <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
+        <CloseButton
+          display={{ base: "flex", md: "flex", lg: "none" }}
+          p={"2px"}
+          onClick={onClose}
+        />
       </Flex>
       {LinkItems.map((link) => (
         <NavItem
           key={link.name}
+          name={link.name}
           icon={link.icon}
-          fontFamily={"Poppins"}
-          fontSize={"18px"}
-          lineHeight={"27px"}
-          _hover={{
-            bg: "rgba(212, 106, 53, 1)",
-            color: "white",
-            border: "1px solid rgba(212, 106, 53, 1)",
-          }}
+          activePage={activePage}
+          setActivePage={setActivePage}
+          path={link?.path}
+          onClick={onClose}
         >
           {link.name}
         </NavItem>
@@ -281,26 +312,47 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   );
 };
 
-const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
+const NavItem = ({
+  icon,
+  children,
+  name,
+  activePage,
+  setActivePage,
+  path,
+  onClick,
+}: NavItemProps) => {
+  const navigate = useNavigate();
   return (
     <Box
       as="a"
-      href="#"
       alignItems={"center"}
       style={{ textDecoration: "none" }}
       _focus={{ boxShadow: "none" }}
+      onClick={onClick}
     >
       <Flex
         align="center"
-        p='3'
-        borderRadius="lg"
+        px={"12px"}
+        py={"12px"}
+        my={"4px"}
+        mx={"4px"}
+        borderRadius={"10px"}
         role="group"
         cursor="pointer"
+        bg={activePage === name ? "#FC0C0C" : "transparent"}
+        color={activePage === name ? "white" : "#737791"}
+        fontFamily={"Nunito Sans"}
+        fontSize={"18px"}
+        lineHeight={"27px"}
         _hover={{
-          bg: "cyan.400",
+          bg: "#FC0C0C",
           color: "white",
         }}
-        {...rest}
+        onClick={() => {
+          setActivePage(name);
+          console.log(name);
+          navigate(`${path}`);
+        }}
       >
         {icon && (
           <Box
@@ -322,45 +374,44 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   return (
     <Flex
-      ml={{ base: 0, md: 60 }}
+      ml={{ base: 0, md: 0, lg: 60 }}
       px={{ base: 4, md: 4 }}
       height="20"
       alignItems="center"
       bg={useColorModeValue("white", "gray.900")}
       borderBottomWidth="1px"
       borderBottomColor={useColorModeValue("gray.200", "gray.700")}
-      justifyContent={{
-        lg: "space-between",
-        base: "space-between",
-        md: "flex-end",
-      }}
+      justifyContent="space-between"
       {...rest}
     >
-      <Flex>
-        <Text
-          color={"black"}
-          fontFamily={"Poppins"}
-          fontSize={"24px"}
-          lineHeight={"33.6px"}
-          fontWeight={600}
-        >
-          Dashboard
-        </Text>
-      </Flex>
-      <Flex>
+      <Flex
+        flexDirection={{ base: "row-reverse", md: "row-reverse", lg: "row" }}
+        gap={"40px"}
+      >
+        <Flex>
+          <Text
+            color={"black"}
+            fontFamily={"Nunito Sans"}
+            fontSize={"24px"}
+            lineHeight={"33.6px"}
+            fontWeight={600}
+          ></Text>
+        </Flex>
         <IconButton
-          display={{ base: "flex", md: "none" }}
+          display={{ base: "flex", md: "flex", lg: "none" }}
           onClick={onOpen}
           variant="outline"
           aria-label="open menu"
           icon={<FiMenu />}
+          padding={"2px"}
         />
-
+      </Flex>
+      <Flex>
         <HStack spacing={{ base: "0", md: "6" }}>
           <IconButton
             size="lg"
             variant="ghost"
-            aria-label="open menu"
+            aria-label="open notifications"
             icon={<FiBell />}
           />
           <Flex alignItems={"center"}>
@@ -384,10 +435,14 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                     spacing="1px"
                     ml="2"
                   >
-                    <Text fontSize="sm" fontFamily={"Poppins"}>
+                    <Text fontSize="sm" fontFamily={"Nunito Sans"}>
                       Jon
                     </Text>
-                    <Text fontSize="xs" fontFamily={"Poppins"} color="gray.600">
+                    <Text
+                      fontSize="xs"
+                      fontFamily={"Nunito Sans"}
+                      color="gray.600"
+                    >
                       Admin
                     </Text>
                   </VStack>
@@ -399,7 +454,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               <MenuList
                 bg={useColorModeValue("white", "gray.900")}
                 borderColor={useColorModeValue("gray.200", "gray.700")}
-                fontFamily={"Poppins"}
+                fontFamily={"Nunito Sans"}
               >
                 <MenuItem>Profile</MenuItem>
                 <MenuItem>Settings</MenuItem>
@@ -415,14 +470,17 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   );
 };
 
+
 const Sidebar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
-    <Box height="100vh" bg={"#f9f5f5"}>
+    <Box height="100%" bg={"#f9f5f5"}>
       <SidebarContent
-        onClose={() => onClose}
-        display={{ base: "none", md: "block" }}
+        onClose={onClose}
+        display={{ base: "none", md: "none", lg: 'block' }}
       />
       <Drawer
         isOpen={isOpen}
@@ -430,19 +488,20 @@ const Sidebar = () => {
         onClose={onClose}
         returnFocusOnClose={false}
         onOverlayClick={onClose}
-        size="full"
+        size={"200px"}
+        
+        
       >
-        <DrawerContent>
+        <DrawerContent bg={'transparent'}>
           <SidebarContent onClose={onClose} />
         </DrawerContent>
       </Drawer>
-      {/* mobilenav */}
       <MobileNav onOpen={onOpen} />
-      <Box ml={{ base: 0, md: 60 }} p="4">
-        <Dashboard />
+      <Box ml={{ base: 0, md: 0, lg: 60 }} pt={2}>
       </Box>
     </Box>
   );
+};
 };
 
 export default Sidebar;
