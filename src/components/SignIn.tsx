@@ -111,7 +111,7 @@ const SignIn = () => {
           p={{ lg: "100px", md: "100px", base: "20px" }}
         >
           <Image
-            src={Logo2}
+            src={Logo}
             width={"100px"}
             height={"100px"}
             my={"40px"}
