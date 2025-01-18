@@ -33,6 +33,7 @@ import SignIn from "./components/SignIn";
 function App() {
   return (
     <>
+    <>
       <BrowserRouter>
         <Routes>
           <Route path="/signin" element={<SignIn />} />
@@ -72,6 +73,8 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+    </>
+  );
     </>
   );
 }
