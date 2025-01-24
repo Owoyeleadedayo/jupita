@@ -6,7 +6,7 @@ import {
   UploadSelfiePayload,
   ApplyPersonalLoan,
   ApplyBusinessLoan,
-  UpdateBorrowerDataPayloan,
+  // UpdateBorrowerDataPayload,
 } from "./types";
 
 const initiateLoan = async (tenantId: string, payload: InitiateLoanPayload) => {
@@ -94,12 +94,12 @@ const updatePersonalLoan = async (
 
 const updateBorrowerData = async (
   tenantId: string,
-  payload: UpdateBorrowerDataPayloan
+  // payload: UpdateBorrowerDataPayloan
 ) => {
   return (
     await axiosInstance.post<BaseResponse>(
       `${tenantId}/loan/update-borrower-data`,
-      payload
+      // payload
     )
   ).data;
 };

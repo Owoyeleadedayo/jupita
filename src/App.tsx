@@ -13,7 +13,7 @@ import CreditSearchPage from "./pages/CreditSearch/CreditSearchtPage";
 import CreditSearchResultPage from "./pages/CreditSearch/CreditSearchResultPage";
 import TransactionPage from "./pages/Transaction/TransactionPage";
 import DetailsPage from "./pages/Transaction/DetailsPage";
-import LogsPage from "./pages/Logs/LogsPage";
+// import LogsPage from "./pages/Logs/LogsPage";
 import LoginPage from "./pages/Login/LoginPage";
 import { Box } from "@chakra-ui/react";
 import EmailVerificationPage from "./pages/EmailVerification/EmailVerificationPage";
@@ -67,7 +67,6 @@ function App() {
             <Route path="/setting" element={<SettingsPage />} />
             <Route path="/decision-module" element={<DecisionModulePage />} />
             <Route path="/create-module" element={<CreateModulePage />} />
-            <Route path="/logs" element={<LogsPage />} />
 
             <Route path="*" element={<div>Page not found</div>} />
           </Route>
@@ -101,7 +100,6 @@ function LayoutWithSidebar() {
           <Route path="/setting" element={<SettingsPage />} />
           <Route path="/decision-module" element={<DecisionModulePage />} />
           <Route path="/create-module" element={<CreateModulePage />} />
-          <Route path="/logs" element={<LogsPage />} />
         </Routes>
       </div>
     </Box>
