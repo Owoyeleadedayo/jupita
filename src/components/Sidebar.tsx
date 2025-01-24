@@ -474,7 +474,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
 const Sidebar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  // const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Box height="100%" bg={"#f9f5f5"}>
@@ -501,7 +501,6 @@ const Sidebar = () => {
       </Box>
     </Box>
   );
-};
 };
 
 export default Sidebar;
