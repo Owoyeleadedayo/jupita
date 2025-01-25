@@ -19,11 +19,12 @@ import {
   MenuItem,
   MenuList,
   Image,
+  Spinner,
 } from "@chakra-ui/react";
 import { FiMenu, FiBell, FiChevronDown } from "react-icons/fi";
 import Logo from "../assets/Images/jupita.png";
-import { ReactNode,  useState } from "react";
-import {  useNavigate } from "react-router-dom";
+import { ReactNode, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface LinkItemProps {
   name: string;
@@ -264,7 +265,6 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   //     setActivePage(page!.name);
   //   }
   // }, [location.pathname]);
-  
 
   return (
     <Box
@@ -322,6 +322,17 @@ const NavItem = ({
   onClick,
 }: NavItemProps) => {
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleNavigation = async () => {
+    setIsLoading(true);
+    setActivePage(name);
+
+    await new Promise((resolve) => setTimeout(resolve, 300));
+
+    navigate(`${path}`);
+    setIsLoading(false);
+  };
   return (
     <Box
       as="a"
@@ -330,6 +341,22 @@ const NavItem = ({
       _focus={{ boxShadow: "none" }}
       onClick={onClick}
     >
+      {isLoading && (
+        <Box
+          position="fixed"
+          top={0}
+          left={0}
+          width="100vw"
+          height="100vh"
+          bg="rgba(255, 255, 255, 0.8)"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          zIndex={9999} // Ensure overlay is above all other content
+        >
+          <Spinner size="xl" color="red.500" />
+        </Box>
+      )}
       <Flex
         align="center"
         px={"12px"}
@@ -348,11 +375,7 @@ const NavItem = ({
           bg: "#FC0C0C",
           color: "white",
         }}
-        onClick={() => {
-          setActivePage(name);
-          console.log(name);
-          navigate(`${path}`);
-        }}
+        onClick={handleNavigation} // Handle click event
       >
         {icon && (
           <Box
@@ -470,17 +493,14 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   );
 };
 
-
 const Sidebar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
-  // const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Box height="100%" bg={"#f9f5f5"}>
       <SidebarContent
         onClose={onClose}
-        display={{ base: "none", md: "none", lg: 'block' }}
+        display={{ base: "none", md: "none", lg: "block" }}
       />
       <Drawer
         isOpen={isOpen}
@@ -489,16 +509,13 @@ const Sidebar = () => {
         returnFocusOnClose={false}
         onOverlayClick={onClose}
         size={"200px"}
-        
-        
       >
-        <DrawerContent bg={'transparent'}>
+        <DrawerContent bg={"transparent"}>
           <SidebarContent onClose={onClose} />
         </DrawerContent>
       </Drawer>
       <MobileNav onOpen={onOpen} />
-      <Box ml={{ base: 0, md: 0, lg: 60 }} pt={2}>
-      </Box>
+      <Box ml={{ base: 0, md: 0, lg: 60 }} pt={2}></Box>
     </Box>
   );
 };
